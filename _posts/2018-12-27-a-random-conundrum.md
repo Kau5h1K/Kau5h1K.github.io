@@ -3,7 +3,7 @@ layout: post
 title: "A Random Conundrum"
 date: 2018-12-27
 tags: [probability, python, random numbers, hackers statistics]
-excerpt: "With hacker statistics to calculate my chances of winning a bet using random number generators, loops and matplotlib"
+excerpt: "With hacker statistics, calculate your chances of winning a bet using random number generators, loops and matplotlib"
 comments: true
 ---
 A while back, I have come across a coding challenge prompting to make a guess in terms of probability of a peculiar problem that caught my interest. *Imagine you're walking up a random sky scraper along with your friends and paused to play a game of dice to kill some time.*
