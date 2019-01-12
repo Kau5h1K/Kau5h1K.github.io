@@ -18,6 +18,8 @@ A while back, I have come across a coding challenge prompting to make a guess in
 
 - And with all good things arrive a catch which so happens to be your own clumsiness that may lead you to tumble down the stairs to square one, where you started (Step 0). It comes with a chance of **0.1%** with each move.
 
+---
+
 So, as ambitious as you are, you bet your friend that you would reach **60** steps or higher by throwing your dice a hundred times.
 And with that, *our task is to calculate your chances of winning the petty bet.*
 Although there are many ways to tackle this problem analytically, I would always lean towards using a *simulated* approach, one that would mimic and run the process a lot of times to determine the fraction of simulations wherein you win the bet and thereby, computing the mean probability of your winnings thereof. This is a form of *Hacker statistics*.
@@ -48,6 +50,9 @@ elif dice in [3,4,5] :
 else :
     step = step + np.random.randint(1,7)
 ```
+
+---
+
 Proceeding further, we exploit a jargon called *random walk*. Interesting!
 If a dice is used to determine the next step, it's said to be a random step. Similarly, if the dice is thrown a hundred times, we would have a succession of random steps, a random walk. This notion is observed across several disciplines. For instance, In science, the path traced by a molecule in a liquid or gas can be modeled as a random walk. Financial status of a gambler can also be considered as such.
 
@@ -94,6 +99,8 @@ plt.show()
 ```
 ![alt text](https://i.imgur.com/cr9uJG0.png "Figure 1")
 This is pretty cool! You can clearly see how your random walk progressed.
+
+---
 
 A single random walk is one thing, but that doesn't tell you if you have a good chance at winning the bet. To get an idea about how big your chances are of reaching **60** steps, you can repeatedly simulate the random walk and collect the results.
 We fill in the specification of the `for` loop so that the random walk is simulated **10** times. After the `random_walk` array is entirely populated, append the array to the `all_walks` list.
@@ -160,6 +167,9 @@ we use `numpy` package to fetch `mean` function to calculate the probability as 
 ```python
 np.mean(end>=60)
 ```
+
+---
+
 And the result we get is **78.4%.**
 So **YES**, looks like the claims made by you has come to fruition and you are definitely more likely to win your bet.
 

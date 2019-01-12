@@ -8,6 +8,8 @@ feature: https://i.imgur.com/xd2jg1q.png
 ---
 >“Numbers have an important story to tell. They rely on you to give them a voice.”
 
+---
+
 Hi peeps!
 This is **Kaushik** and well, to put it short I'd like to call myself a **Data science** aspirant and hobbyist. But when you get right down to it, I'm much more - an avid reader, a travel freak brimming with wanderlust, enjoy music, art and wildlife photography, love playing games (hardcore), geek out over technological trends and gadgets, keep up with Tennis, cricket and Basketball, as well as also play piano in my highs and lows.
 
@@ -21,6 +23,8 @@ My ultimate intent of pursuit in **research** is to build useful systems and alg
 
 This is my first professional blog. I want to utilize this space to write about my work, about machine learning, mathematical modeling, emerging topics in data science and its applications hoping it would become an outlet for technical, intuitive and programming-related posts. It's my way to document things I find interesting for my future self.
 Although I'm one of those laconic types, I intend to keep everything I want to share regarding my professional landscape and interests crisp and precise, elaborating on the pointers that require more emphasis while trying my best to proofread my own posts.
+
+---
 
 In a nutshell, my *passion* for content is coupled with a love for big picture planning, daily data trends and analysis along with a hint of contributing to productive research in the desired fields. I'm not the one who just wants to work. I'm the one who actually wants to **work**-and **plan**, **ideate**, and **lead**. This is what I drive my passion towards and strive to do best and love most.
 {: .notice}
