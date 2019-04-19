@@ -6,7 +6,7 @@ date: 2018-12-26
 comments: False
 feature: https://i.imgur.com/xd2jg1q.png
 ---
->“Numbers have an important story to tell. They rely on you to give them a voice.”-Stephen Few
+>“Numbers have an important story to tell. They rely on you to give them a voice.” - Stephen Few
 
 ---
 
