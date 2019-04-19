@@ -11,7 +11,14 @@ feature: https://i.imgur.com/xd2jg1q.png
 ---
 
 Hi peeps!
-This is **Kaushik** and well, to put it short I'd like to call myself a **Data science** aspirant and hobbyist. But when you get right down to it, I'm much more - an avid reader, a travel freak brimming with wanderlust, enjoy music, art and wildlife photography, love playing games (hardcore), geek out over technological trends and gadgets, keep up with Tennis, cricket and Basketball, as well as also play piano in my highs and lows.
+This is **Kaushik** and well, to put it short I'd like to call myself a **Data science** aspirant and hobbyist. But when you get right down to it, I'm much more
+- an avid reader
+- a travel freak brimming with wanderlust
+- enjoy a fair amount of music, art and wildlife photography
+- love playing games
+- geek out over technological trends and gadgets
+- tend to keep up with Tennis, cricket and Basketball
+- also play piano in my highs and lows.
 
 Assuming this should suffice to cover up my background and persona, professionally I'm into deep work, connecting with people, and constantly learning something new everyday.
 I am intrigued by the changing economic landscape and sheer amount of data that's been growing at an exorbitant pace over the years and those to follow.
