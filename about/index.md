@@ -6,12 +6,12 @@ date: 2018-12-26
 comments: False
 feature: https://i.imgur.com/xd2jg1q.png
 ---
->“Numbers have an important story to tell. They rely on you to give them a voice.”
+>“Numbers have an important story to tell. They rely on you to give them a voice.”-Stephen Few
 
 ---
 
 Hi peeps!
-This is **Kaushik** and well, to put it short I'd like to call myself a **Data science** aspirant and hobbyist. But when you get right down to it, I'm much more
+This is **Kaushik** and well, to put it short I'd like to call myself a **Data science** aspirant and hobbyist. But when you get right down to it, I'm much more:
 - an avid reader
 - a travel freak brimming with wanderlust
 - enjoy a fair amount of music, art and wildlife photography
