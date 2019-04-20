@@ -16,6 +16,7 @@ body {
 	font-family: $font1;
 	@include font-rem($doc-font-size);
 	color: $color_tuatara;
+	cursor: cell, pointer;
 	background-color: $bodycolor;
 	background-position: center center;
 	background-attachment: fixed;
