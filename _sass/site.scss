@@ -5,11 +5,15 @@
 	width: 100%;
 	height: 100%;
 	font-size: 100%;
+	height: 100vh;
+  cursor: url("abc.cur"),auto;
 }
 
 
 html {
 	@extend %extend1;
+	height: 100vh;
+  cursor: url("abc.cur"),auto;
 }
 body {
 	@extend %extend1;
@@ -29,6 +33,8 @@ body {
 }
 * {
 	box-sizing: border-box;
+	height: 100vh;
+  cursor: url("abc.cur"),auto;
 }
 *::after {
 	box-sizing: border-box;
