@@ -19,8 +19,6 @@ body {
 	background-color: $bodycolor;
 	background-position: center center;
 	background-attachment: fixed;
-	height: 100vh;
-  cursor: url("abc.cur"),auto;
 	@media #{$small} {
 	    background-image: none !important;
 		background: $white;
