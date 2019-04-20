@@ -13,7 +13,7 @@ feature: https://i.imgur.com/xd2jg1q.png
 Hi peeps!
 This is **Kaushik** and well, to put it short I'd like to call myself a **Data science** aspirant and hobbyist. But when you get right down to it, I'm much more:
 - an avid reader
-- a travel freak brimming with wanderlust
+- a happy-go-lucky guy brimming with wanderlust
 - enjoy a fair amount of music, art and wildlife photography
 - love playing games
 - geek out over technological trends and gadgets
