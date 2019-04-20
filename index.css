@@ -167,7 +167,7 @@ html, body {
   text-align: center;
   font-size: 15px;
   padding: 10px;
-  width: 150px;
+  width: 250px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 1px;
@@ -183,7 +183,7 @@ html, body {
 .button span:after {
   content: '\00bb';
   position: absolute;
-  opacity: 1;
+  opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
