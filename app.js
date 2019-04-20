@@ -12,11 +12,11 @@
 /* Otherwise just put the config content (json): */
 
 particlesJS('particles-js',
-  
+
   {
     "particles": {
       "number": {
-        "value": 80,
+        "value": 100,
         "density": {
           "enable": true,
           "value_area": 800
@@ -64,8 +64,8 @@ particlesJS('particles-js',
         "enable": true,
         "distance": 150,
         "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
+        "opacity": 0.55,
+        "width": 1.5
       },
       "move": {
         "enable": true,
@@ -122,8 +122,7 @@ particlesJS('particles-js',
     "retina_detect": true,
     "config_demo": {
       "hide_card": false,
-      "background_color": "#b61924",
-      "background_image": "",
+      "background_image": "https://cdn-images-1.medium.com/max/1350/1*_gg1Te-7SJfk9E2D-mORfw.png",
       "background_position": "50% 50%",
       "background_repeat": "no-repeat",
       "background_size": "cover"
