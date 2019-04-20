@@ -9,7 +9,7 @@ mypic:              'assets/img/mypic.png'
 background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://kaushiknishtala.ml
+url:                https://Kau5h1K.github.io
 typed:              '/assets/js/typed.js'
 # Jekyll
 permalink:          /:title/
