@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Abel');
 html, body {
-  background: black;
+  background-image: url("placeholder-big.jpg");
   font-family: Abel, Arial, Verdana, sans-serif;
 }
 .center {
