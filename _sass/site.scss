@@ -48,6 +48,8 @@ body {
 	width: 100%;
 	min-height: 300px;
 	text-align: left;
+	height: 100vh;
+  cursor: url("abc.cur"),auto;
 	color: $white;
 	@media #{$small} {
 		display: block !important;
@@ -77,6 +79,8 @@ body {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
+	height: 100vh;
+  cursor: url("abc.cur"),auto;
 }
 .container {
 	width: 36rem;
@@ -108,6 +112,8 @@ body {
 	@media #{$small} {
 		padding: 0 1em;
 	}
+	height: 100vh;
+  cursor: url("abc.cur"),auto;
 }
 .wrapper {
 	width: 75%;
@@ -124,6 +130,8 @@ body {
 		padding: 2em 0;
 	    box-shadow: none;
 	}
+	height: 100vh;
+  cursor: url("abc.cur"),auto;
 }
 #disqus_thread {
 	width: 75%;
