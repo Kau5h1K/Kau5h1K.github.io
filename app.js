@@ -122,7 +122,7 @@ particlesJS('particles-js',
     "retina_detect": true,
     "config_demo": {
       "hide_card": false,
-      "background_image": url("https://cdn-images-1.medium.com/max/1350/1*_gg1Te-7SJfk9E2D-mORfw.png"),
+      "background_image": "",
       "background_position": "50% 50%",
       "background_repeat": "no-repeat",
       "background_size": "cover"
