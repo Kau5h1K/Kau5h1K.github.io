@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Abel');
 html, body {
-  background-image: url("placeholder-big.jpg");
+  background: url("placeholder-big.jpg") no-repeat center center fixed;
   font-family: Abel, Arial, Verdana, sans-serif;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden
 }
 .center {
   position: absolute;
@@ -12,13 +15,14 @@ html, body {
 .card {
   width: 450px;
   height: 250px;
-  background-color: blue;
-  background: linear-gradient(#f8f8f8, #fff);
+  background-color: #668DAC;
+  background: #668DAC;
   box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
   border-radius: 6px;
   overflow: hidden;
   position: relative;
   margin: 1.5rem;
+  color: #283643
 }
 .card h1 {
   text-align: center;
@@ -27,7 +31,7 @@ html, body {
   position: absolute;
   width: 150px;
   height: 100%;
-  background: black;
+  background: #283643;
   transition: width 0.4s;
   overflow: hidden;
   z-index: 2;
@@ -57,7 +61,7 @@ html, body {
 .card .additional .user-card .level,
 .card .additional .user-card .points {
   top: 15%;
-  color: #fff;
+  color: #668DAC;
   text-transform: uppercase;
   font-size: 0.75em;
   font-weight: bold;
@@ -80,19 +84,19 @@ html, body {
   height: 100%;
 }
 .card .additional .more-info h1 {
-  color: white;
+  color: #678DAC;
   margin-bottom: 0;
 }
 .card.black .additional .more-info h1 {
-  color: white;
+  color: #678DAC;
 }
 .card .additional .coords {
   margin: 0 1rem;
-  color: white;
+  color: #678DAC;
   font-size: 1rem;
 }
 .card.black .additional .coords {
-  color: white;
+  color: #678DAC;
 }
 .card .additional .coords span + span {
   float: right;
@@ -105,10 +109,10 @@ html, body {
   left: 1rem;
   right: 1rem;
   top: auto;
-  color: white;
+  color: #678DAC;
 }
 .card.black .additional .stats {
-  color: white;
+  color: #678DAC;
 }
 .card .additional .stats > div {
   flex: 1;
@@ -154,4 +158,42 @@ html, body {
   border-radius: 50%;
   width: 100px;
   height: auto;
+}
+.button {
+  border-radius: 4px;
+  background-color: #668DAC;
+  border: none;
+  color: #283643;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 1px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
