@@ -5,22 +5,17 @@
 	width: 100%;
 	height: 100%;
 	font-size: 100%;
-	height: 100vh;
-  cursor: url("abc.cur"),auto;
 }
 
 
 html {
 	@extend %extend1;
-	height: 100vh;
-  cursor: url("abc.cur"),auto;
 }
 body {
 	@extend %extend1;
 	font-family: $font1;
 	@include font-rem($doc-font-size);
 	color: $color_tuatara;
-	cursor: cell, pointer;
 	background-color: $bodycolor;
 	background-position: center center;
 	background-attachment: fixed;
@@ -33,8 +28,6 @@ body {
 }
 * {
 	box-sizing: border-box;
-	height: 100vh;
-  cursor: url("abc.cur"),auto;
 }
 *::after {
 	box-sizing: border-box;
@@ -48,8 +41,6 @@ body {
 	width: 100%;
 	min-height: 300px;
 	text-align: left;
-	height: 100vh;
-  cursor: url("abc.cur"),auto;
 	color: $white;
 	@media #{$small} {
 		display: block !important;
@@ -79,8 +70,6 @@ body {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	height: 100vh;
-  cursor: url("abc.cur"),auto;
 }
 .container {
 	width: 36rem;
@@ -112,8 +101,6 @@ body {
 	@media #{$small} {
 		padding: 0 1em;
 	}
-	height: 100vh;
-  cursor: url("abc.cur"),auto;
 }
 .wrapper {
 	width: 75%;
@@ -130,8 +117,6 @@ body {
 		padding: 2em 0;
 	    box-shadow: none;
 	}
-	height: 100vh;
-  cursor: url("abc.cur"),auto;
 }
 #disqus_thread {
 	width: 75%;
