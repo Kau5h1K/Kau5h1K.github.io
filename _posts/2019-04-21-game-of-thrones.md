@@ -8,6 +8,9 @@ In this project, I look at the character co-occurrence network and its evolution
 comments: True
 project: True
 ---
+## Data
+---
+This project uses a dataset parsed by Andrew J. Beveridge and Jie Shan which is available [here](https://github.com/Kau5h1K/KweriME). For more information on this dataset have a look at the Network of Thrones [blog](https://networkofthrones.wordpress.com/)
 
 ## 1. Winter is Coming. Let's load the dataset ASAP!
 <p>If you haven't heard of <em>Game of Thrones</em>, then you must be really good at hiding. Game of Thrones is the hugely popular television series by HBO based on the (also) hugely popular book series <em>A Song of Ice and Fire</em> by George R.R. Martin. In this notebook, we will analyze the co-occurrence network of the characters in the  Game of Thrones books. Here, two characters are considered to co-occur if their names appear in the vicinity of 15 words from one another in the books. </p>
