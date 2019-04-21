@@ -8,8 +8,8 @@ In this project, I look at the character co-occurrence network and its evolution
 comments: True
 project: True
 ---
-## Data
 ---
+## Data
 This project uses a dataset parsed by Andrew J. Beveridge and Jie Shan which is available [here](https://github.com/Kau5h1K/network-of-thrones/tree/master/datasets). For more information on this dataset have a look at the Network of Thrones [blog](https://networkofthrones.wordpress.com/).
 
 ---
