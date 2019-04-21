@@ -361,7 +361,9 @@ cor.idxmax(axis=1)
 If you're more interested in network analysis you can have a look at the following resources:
 
 - [networkofthrones](https://networkofthrones.wordpress.com/) is a blog dedicated to data collection and all things networks about Game of Thrones.
+
 - [bookworm](https://github.com/harrisonpim/bookworm): Extracting social networks from novels.
+
 ---
 ## Dig deeper?
 
