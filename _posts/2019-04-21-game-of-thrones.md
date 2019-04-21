@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Game of Thrones analysis with Networks"
+date: 2019-04-21
+tags: [ Project, python, networkx, pagerank, betweenness_centrality, degree_centrality]
+excerpt: "Jon Snow, Daenerys Targaryen, or Tyrion Lannister? Who is the most important character in Game of Thrones? Let's see what mathematics can tell us about this!
+In this project, I look at the character co-occurrence network and its evolution over the five books in R.R. Martin's hugely popular book series A Song of Ice and Fire (perhaps better known as the TV show Game of Thrones). I also look at how the importance of the characters changes over the books using different centrality measures."
+comments: True
+project: True
+---
 
 ## 1. Winter is Coming. Let's load the dataset ASAP!
 <p>If you haven't heard of <em>Game of Thrones</em>, then you must be really good at hiding. Game of Thrones is the hugely popular television series by HBO based on the (also) hugely popular book series <em>A Song of Ice and Fire</em> by George R.R. Martin. In this notebook, we will analyze the co-occurrence network of the characters in the  Game of Thrones books. Here, two characters are considered to co-occur if their names appear in the vicinity of 15 words from one another in the books. </p>
@@ -148,7 +158,7 @@ print(sorted_deg_cen_book5)
 
     [('Eddard-Stark', 0.3548387096774194), ('Robert-Baratheon', 0.2688172043010753), ('Tyrion-Lannister', 0.24731182795698928), ('Catelyn-Stark', 0.23118279569892475), ('Jon-Snow', 0.19892473118279572), ('Sansa-Stark', 0.18817204301075272), ('Robb-Stark', 0.18817204301075272), ('Bran-Stark', 0.17204301075268819), ('Cersei-Lannister', 0.16129032258064518), ('Joffrey-Baratheon', 0.16129032258064518)]
     [('Jon-Snow', 0.1962025316455696), ('Daenerys-Targaryen', 0.18354430379746836), ('Stannis-Baratheon', 0.14873417721518986), ('Theon-Greyjoy', 0.10443037974683544), ('Tyrion-Lannister', 0.10443037974683544), ('Cersei-Lannister', 0.08860759493670886), ('Barristan-Selmy', 0.07911392405063292), ('Hizdahr-zo-Loraq', 0.06962025316455696), ('Asha-Greyjoy', 0.056962025316455694), ('Melisandre', 0.05379746835443038)]
-    
+
 
 ## 5. The evolution of character importance
 <p>According to degree centrality, the most important character in the first book is Eddard Stark but he is not even in the top 10 of the fifth book. The importance of characters changes over the course of five books because, you know, stuff happens... ;)</p>
@@ -160,7 +170,7 @@ print(sorted_deg_cen_book5)
 
 # Creating a list of degree centrality of all the books
 evol = [nx.degree_centrality(book) for book in books]
- 
+
 # Creating a DataFrame from the list of degree centralities in all the books
 degree_evol_df = pd.DataFrame.from_records(evol).fillna(0)
 
@@ -254,8 +264,8 @@ pagerank_evol_df[list_of_char].plot(figsize=(13, 7))
 ```python
 # Creating a list of pagerank, betweenness centrality, degree centrality
 # of all the characters in the fifth book.
-measures = [nx.pagerank(books[4]), 
-            nx.betweenness_centrality(books[4], weight='weight'), 
+measures = [nx.pagerank(books[4]),
+            nx.betweenness_centrality(books[4], weight='weight'),
             nx.degree_centrality(books[4])]
 
 # Creating the correlation DataFrame
@@ -341,4 +351,9 @@ cor.idxmax(axis=1)
     2             Jon-Snow
     dtype: object
 
+### Dig deeper?
 
+---
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/KweriME).
+{: .notice}
