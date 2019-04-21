@@ -11,7 +11,7 @@ project: True
 ## Data
 ---
 This project uses a dataset parsed by Andrew J. Beveridge and Jie Shan which is available [here](https://github.com/Kau5h1K/KweriME). For more information on this dataset have a look at the Network of Thrones [blog](https://networkofthrones.wordpress.com/).
-
+---
 ## 1. Winter is Coming. Let's load the dataset ASAP!
 ---
 <p>If you haven't heard of <em>Game of Thrones</em>, then you must be really good at hiding. Game of Thrones is the hugely popular television series by HBO based on the (also) hugely popular book series <em>A Song of Ice and Fire</em> by George R.R. Martin. In this notebook, we will analyze the co-occurrence network of the characters in the  Game of Thrones books. Here, two characters are considered to co-occur if their names appear in the vicinity of 15 words from one another in the books. </p>
@@ -103,7 +103,7 @@ book1.head()
 </div>
 
 
-
+---
 ## 2. Time for some Network of Thrones
 ---
 <p>The resulting DataFrame <code>book1</code> has 5 columns: <code>Source</code>, <code>Target</code>, <code>Type</code>, <code>weight</code>, and <code>book</code>. Source and target are the two nodes that are linked by an edge. A network can have directed or undirected edges and in this network all the edges are undirected. The weight attribute of every edge tells us the number of interactions that the characters have had over the book, and the book column tells us the book number.</p>
@@ -116,7 +116,7 @@ import networkx as nx
 # Creating an empty graph object
 G_book1 = nx.Graph()
 ```
-
+---
 ## 3. Populate the network with the DataFrame
 ---
 <p>Currently, the graph object <code>G_book1</code> is empty. Let's now populate it with the edges from <code>book1</code>. And while we're at it, let's load in the rest of the books too!</p>
@@ -136,7 +136,7 @@ for book_fname in book_fnames:
         G_book.add_edge(edge['Source'], edge['Target'], weight=edge['weight'])
     books.append(G_book)
 ```
-
+---
 ## 4. The most important character in Game of Thrones
 ---
 <p>Is it Jon Snow, Tyrion, Daenerys, or someone else? Let's see! Network science offers us many different metrics to measure the importance of a node in a network. Note that there is no "correct" way of calculating the most important node in a network, every metric has a different meaning.</p>
@@ -166,7 +166,7 @@ print(sorted_deg_cen_book5)
     [('Eddard-Stark', 0.3548387096774194), ('Robert-Baratheon', 0.2688172043010753), ('Tyrion-Lannister', 0.24731182795698928), ('Catelyn-Stark', 0.23118279569892475), ('Jon-Snow', 0.19892473118279572), ('Sansa-Stark', 0.18817204301075272), ('Robb-Stark', 0.18817204301075272), ('Bran-Stark', 0.17204301075268819), ('Cersei-Lannister', 0.16129032258064518), ('Joffrey-Baratheon', 0.16129032258064518)]
     [('Jon-Snow', 0.1962025316455696), ('Daenerys-Targaryen', 0.18354430379746836), ('Stannis-Baratheon', 0.14873417721518986), ('Theon-Greyjoy', 0.10443037974683544), ('Tyrion-Lannister', 0.10443037974683544), ('Cersei-Lannister', 0.08860759493670886), ('Barristan-Selmy', 0.07911392405063292), ('Hizdahr-zo-Loraq', 0.06962025316455696), ('Asha-Greyjoy', 0.056962025316455694), ('Melisandre', 0.05379746835443038)]
 
-
+---
 ## 5. The evolution of character importance
 ---
 <p>According to degree centrality, the most important character in the first book is Eddard Stark but he is not even in the top 10 of the fifth book. The importance of characters changes over the course of five books because, you know, stuff happens... ;)</p>
@@ -196,7 +196,7 @@ degree_evol_df[['Eddard-Stark', 'Tyrion-Lannister','Jon-Snow']].plot()
 
 ![png](/assets/img/game-of-thrones_files/game-of-thrones_9_1.png)
 
-
+---
 ## 6. What's up with Stannis Baratheon?
 ---
 <p>We can see that the importance of Eddard Stark dies off as the book series progresses. With Jon Snow, there is a drop in the fourth book but a sudden rise in the fifth book.</p>
@@ -230,7 +230,7 @@ betweenness_evol_df[list_of_char].plot(figsize=(13, 7))
 
 ![png](/assets/img/game-of-thrones_files/game-of-thrones_11_1.png)
 
-
+---
 ## 7. What does Google PageRank tell us about GoT?
 ---
 <p>We see a peculiar rise in the importance of Stannis Baratheon over the books. In the fifth book, he is significantly more important than other characters in the network, even though he is the third most important character according to degree centrality.</p>
@@ -264,7 +264,7 @@ pagerank_evol_df[list_of_char].plot(figsize=(13, 7))
 
 ![png](/assets/img/game-of-thrones_files/game-of-thrones_13_1.png)
 
-
+---
 ## 8. Correlation between different measures
 ---
 <p>Stannis, Jon Snow, and Daenerys are the most important characters in the fifth book according to PageRank. Eddard Stark follows a similar curve but for degree centrality and betweenness centrality: He is important in the first book but dies into oblivion over the book series.</p>
@@ -339,7 +339,7 @@ cor.T.corr().style.background_gradient()
     </tbody></table>
 
 
-
+---
 ## 9. Conclusion
 ---
 <p>We see a high correlation between these three measures for our character co-occurrence network.</p>
@@ -362,7 +362,8 @@ cor.idxmax(axis=1)
     1    Stannis-Baratheon
     2             Jon-Snow
     dtype: object
-
+    
+---
 ## Dig deeper?
 ---
 
