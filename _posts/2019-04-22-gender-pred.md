@@ -1,4 +1,20 @@
+---
+layout: post
+title: "Predicting gender using Sound data"
+tags: [ Project, python, pandas, fuzzy, Data Visualization, NYSIIS ]
+date: 2019-04-22
+excerpt: "The same name can be spelled out in a many ways (for example, Marc and Mark, or Elizabeth and Elisabeth). Sound can, therefore, be a better way to match names than spelling. <br/>
+In this project, I have used the Python package Fuzzy to find out the genders of authors that have appeared in the New York Times Best Seller list for Children's Picture books.<br/>
+First, using fuzzy (sound) name matching, I have searched for author names in a dataset provided by the US Social Security Administration that contains names and genders of all individuals who have applied for Social Security Cards. Next, I have aggregated the author dataset by including gender. Finally, I used the new dataset to plot the gender distribution of children's picture books authors over time."
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/gender-pred/tree/master/datasets).
+
+---
 ## 1. Sound it out!
 <p>Grey and Gray. Colour and Color. Words like these have been the cause of many heated arguments between Brits and Americans. Accents (and jokes) aside, there are many words that are pronounced the same way but have different spellings. While it is easy for us to realize their equivalence, basic programming commands will fail to equate such two strings. </p>
 <p>More extreme than word spellings are names because people have more flexibility in choosing to spell a name in a certain way. To some extent, tradition sometimes governs the way a name is spelled, which limits the number of variations of any given English name. But if we consider global names and their associated English spellings, you can only imagine how many ways they can be spelled out. </p>
@@ -20,7 +36,7 @@ fuzzy.nysiis('tomorrow') == fuzzy.nysiis('tommorow')
     True
 
 
-
+---
 ## 2. Authoring the authors
 <p>The New York Times puts out a weekly list of best-selling books from different genres, and which has been published since the 1930’s.  We’ll focus on Children’s Picture Books, and analyze the gender distribution of authors to see if there have been changes over time. We'll begin by reading in the data on the best selling authors from 2008 to 2017.</p>
 
@@ -116,7 +132,7 @@ author_df.head()
 </div>
 
 
-
+---
 ## 3. It's time to bring on the phonics... _again_!
 <p>When we were young children, we were taught to read using phonics; sounding out the letters that compose words. So let's relive history and do that again, but using python this time. We will now create a new column or list that contains the phonetic equivalent of every first name that we just extracted. </p>
 <p>To make sure we're on the right track, let's compare the number of unique values in the <code>first_name</code> column and the number of unique values in the nysiis coded column. As a rule of thumb, the number of unique nysiis first names should be less than or equal to the number of actual first names.</p>
@@ -136,13 +152,9 @@ author_df['nysiis_name'] = nysiis_name
 len(np.unique(author_df.first_name)) - len(np.unique(author_df.nysiis_name))
 ```
 
-
-
-
     25
 
-
-
+---
 ## 4. The inbetweeners
 <p>We'll use <code>babynames_nysiis.csv</code>, a dataset that is derived from <a href="https://www.ssa.gov/oact/babynames/limits.html">the Social Security Administration’s baby name data</a>, to identify author genders. The dataset contains unique NYSIIS versions of baby names, and also includes the percentage of times the name appeared as a female name (<code>perc_female</code>) and the percentage of times it appeared as a male name (<code>perc_male</code>). </p>
 <p>We'll use this data to create a list of <code>gender</code>. Let's make the following simplifying assumption: For each name, if <code>perc_female</code> is greater than <code>perc_male</code> then assume the name is female, if <code>perc_female</code> is less than <code>perc_male</code> then assume it is a male name, and if the percentages are equal then it's a "neutral" name.</p>
@@ -244,7 +256,7 @@ babies_df.head()
 </div>
 
 
-
+---
 ## 5. Playing matchmaker
 <p>Now that we have identified the likely genders of different names, let's find author genders by searching for each author's name in the <code>babies_df</code> DataFrame, and extracting the associated gender. </p>
 
@@ -271,17 +283,13 @@ author_df['author_gender'] = author_gender
 author_df.author_gender.value_counts()
 ```
 
-
-
-
     F          395
     M          191
     Unknown      9
     N            8
     Name: author_gender, dtype: int64
 
-
-
+---
 ## 6. Tally up
 <p>From the results above see that there are more female authors on the New York Times best seller's list than male authors. Our dataset spans 2008 to 2017. Let's find out if there have been changes over time.</p>
 
@@ -310,8 +318,8 @@ print(males_by_yr,females_by_yr,unknown_by_yr)
 ```
 
     [8, 19, 27, 21, 21, 11, 21, 18, 25, 20] [15, 45, 48, 51, 46, 51, 34, 30, 32, 43] [1, 3, 0, 1, 0, 2, 1, 0, 0, 1]
-    
 
+---
 ## 7. Foreign-born authors?
 <p>Our gender data comes from social security applications of individuals born in the US. Hence, one possible explanation for why there are "unknown" genders associated with some author names is because these authors were foreign-born. While making this assumption, we should note that these are only a subset of foreign-born authors as others will have names that have a match in <code>baby_df</code> (and in the social security dataset). </p>
 <p>Using a bar chart, let's explore the trend of foreign-born authors with no name matches in the social security dataset.</p>
@@ -333,17 +341,13 @@ plt.xlabel('Years')
 plt.ylabel('Count')
 ```
 
-
-
-
     Text(0,0.5,'Count')
-
 
 
 
 ![png](/assets/img/gender-pred_files/gender-pred_13_1.png)
 
-
+---
 ## 8. Raising the bar
 <p>What’s more exciting than a bar chart is a grouped bar chart. This type of chart is good for displaying <em>changes</em> over time while also <em>comparing</em> two or more groups. Let’s use a grouped bar chart to look at the distribution of male and female authors over time.</p>
 
@@ -363,13 +367,17 @@ plt.xlabel('Years')
 plt.ylabel('Count')
 ```
 
-
-
-
     Text(0,0.5,'Count')
-
-
 
 
 ![png](/assets/img/gender-pred_files/gender-pred_15_1.png)
 
+---
+## Further Reading
+- There are a number of different phonetic algorithms; each with its own set of advantages and disadvantages. Check out this [blog post](https://ntz-develop.blogspot.co.uk/2011/03/phonetic-algorithms.html) if you want to know more.
+
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/gender-pred).
+{: .notice}
