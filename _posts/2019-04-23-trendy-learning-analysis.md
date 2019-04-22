@@ -255,9 +255,6 @@ papers['title_processed'].head()
     Name: title, dtype: object
 
 
-
-
-
     0    self-organization of associative database and ...
     1    a mean field theory of layer iv of visual cort...
     2    storing covariance by the associative long-ter...
