@@ -1,4 +1,19 @@
+---
+layout: post
+title: "Filter passwords using NIST guidelines"
+tags: [ Project, python, pandas, Cleaning Data, Tensorflow, Natural Language Processing, NLP, gensim, pickle, token, tokenize, stemming, lemmatization, regex, hierarchy, cluster, dendrogram]
+date: 2019-04-22
+excerpt: "Recommendation systems are at the heart of many products such as Netflix or Amazon. They generally rely on metadata (e.g., the actors or director of a movie) or on user tastes (e.g., the movies you liked before) to determine which you are most likely to enjoy. But when you are working with text-heavy datasets, you have access to a much richer resource, the whole text!<br/>
+In this Project, I managed to build the basic book recommendation system based on their content. I used Charles Darwin's bibliography to find out which books might interest you!"
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/book_recommendations/tree/master/datasets).The dataset was manually collected from [Project Gutenberg](https://www.gutenberg.org/).
+
+---
 ## 1. Darwin's bibliography
 <p><img src="https://assets.datacamp.com/production/project_607/img/CharlesDarwin.jpg" alt="Charles Darwin" width="300px"></p>
 <p>Charles Darwin is one of the few universal figures of science. His most renowned work is without a doubt his "<em>On the Origin of Species</em>" published in 1859 which introduced the concept of natural selection. But Darwin wrote many other books on a wide range of topics, including geology, plants or his personal life. In this notebook, we will automatically detect how closely related his books are to each other.</p>
@@ -17,6 +32,7 @@ folder = "datasets/"
 files = sorted(glob.glob(folder + '*.txt'))
 ```
 
+---
 ## 2. Load the contents of each book into Python
 <p>As a first step, we need to load the content of these books into Python and do some basic pre-processing to facilitate the downstream analyses. We call such a collection of texts <strong>a corpus</strong>. We will also store the titles for these books for future reference and print their respective length to get a gauge for their contents.</p>
 
@@ -67,7 +83,7 @@ for n in files:
      1149574]
 
 
-
+---
 ## 3. Find "On the Origin of Species"
 <p>For the next parts of this analysis, we will often check the results returned by our method for a given book. For consistency, we will refer to Darwin's most famous book: "<em>On the Origin of Species</em>." Let's find to which index this book is associated.</p>
 
@@ -89,7 +105,7 @@ ori
     15
 
 
-
+---
 ## 4. Tokenize the corpus
 <p>As a next step, we need to transform the corpus into a format that is easier to deal with for the downstream analyses. We will tokenize our corpus, i.e., transform each text into a list of the individual words (called tokens) it is made of. To check the output of our process, we will print the first 20 tokens of "<em>On the Origin of Species</em>".</p>
 
@@ -98,10 +114,10 @@ ori
 # Define a list of stop words
 stoplist = set('for a of the and to in to be which some is at that we i who whom show via may my our might as well'.split())
 
-# Convert the text to lower case 
+# Convert the text to lower case
 txts_lower_case = [txt.lower() for txt in txts]
 
-# Transform the text into tokens 
+# Transform the text into tokens
 txts_split = [txt.split() for txt in txts_lower_case]
 
 # Remove tokens which are part of the list of stop words
@@ -136,7 +152,7 @@ texts[ori][:20]
      'about']
 
 
-
+---
 ## 5. Stemming of the tokenized corpus
 <p>If you have read <em>On the Origin of Species</em>, you will have noticed that Charles Darwin can use different words to refer to a similar concept. For example, the concept of selection can be described by words such as <em>selection</em>, <em>selective</em>, <em>select</em> or <em>selects</em>. This will dilute the weight given to this concept in the book and potentially bias the results of the analysis.</p>
 <p>To solve this issue, it is a common practice to use a <strong>stemming process</strong>, which will group together the inflected forms of a word so they can be analysed as a single item: <strong>the stem</strong>. In our <em>On the Origin of Species</em> example, the words related to the concept of selection would be gathered under the <em>select</em> stem.</p>
@@ -154,8 +170,8 @@ print(texts_stem[ori][:20])
 ```
 
     ['on', 'origin', 'speci', 'but', 'with', 'regard', 'materi', 'world', 'can', 'least', 'go', 'so', 'far', 'thi', 'can', 'perceiv', 'event', 'are', 'brought', 'about']
-    
 
+---
 ## 6. Building a bag-of-words model
 <p>Now that we have transformed the texts into stemmed tokens, we need to build models that will be useable by downstream algorithms.</p>
 <p>First, we need to will create a universe of all words contained in our corpus of Charles Darwin's books, which we call <em>a dictionary</em>. Then, using the stemmed tokens and the dictionary, we will create <strong>bag-of-words models</strong> (BoW) of each of our texts. The BoW models will represent our books as a list of all uniques tokens they contain associated with their respective number of occurrences. </p>
@@ -182,7 +198,7 @@ bows[ori][:5]
     [(0, 11), (5, 51), (6, 1), (8, 2), (21, 1)]
 
 
-
+---
 ## 7. The most common words of a given book
 <p>The results returned by the bag-of-words model is certainly easy to use for a computer but hard to interpret for a human. It is not straightforward to understand which stemmed tokens are present in a given book from Charles Darwin, and how many occurrences we can find.</p>
 <p>In order to better understand how the model has been generated and visualize its content, we will transform it into a DataFrame and display the 10 most common stems for the book "<em>On the Origin of Species</em>".</p>
@@ -295,7 +311,7 @@ df_bow_origin.sort_values(by=['occurrences'],ascending=False).head(10)
 </div>
 
 
-
+---
 ## 8. Build a tf-idf model
 <p>If it wasn't for the presence of the stem "<em>speci</em>", we would have a hard time to guess this BoW model comes from the <em>On the Origin of Species</em> book. The most recurring words are, apart from few exceptions, very common and unlikely to carry any information peculiar to the given book. We need to use an additional step in order to determine which tokens are the most specific to a book.</p>
 <p>To do so, we will use a <strong>tf-idf model</strong> (term frequency–inverse document frequency). This model defines the importance of each word depending on how frequent it is in this text and how infrequent it is in all the other documents. As a result, a high tf-idf score for a word will indicate that this word is specific to this text.</p>
@@ -1319,7 +1335,7 @@ model[bows[ori]]
      ...]
 
 
-
+---
 ## 9. The results of the tf-idf model
 <p>Once again, the format of those results is hard to interpret for a human. Therefore, we will transform it into a more readable version and display the 10 most specific words for the "<em>On the Origin of Species</em>" book.</p>
 
@@ -1428,7 +1444,7 @@ df_tfidf.sort_values(by=['score'],ascending=False).head(10)
 </div>
 
 
-
+---
 ## 10. Compute distance between texts
 <p>The results of the tf-idf algorithm now return stemmed tokens which are specific to each book. We can, for example, see that topics such as selection, breeding or domestication are defining "<em>On the Origin of Species</em>" (and yes, in this book, Charles Darwin talks quite a lot about pigeons too). Now that we have a model associating tokens to how specific they are to each book, we can measure how related to books are between each other.</p>
 <p>To this purpose, we will use a measure of similarity called <strong>cosine similarity</strong> and we will visualize the results as a distance matrix, i.e., a matrix showing all pairwise distances between Darwin's books.</p>
@@ -1960,7 +1976,7 @@ sim_df
 </div>
 
 
-
+---
 ## 11. The book most similar to "On the Origin of Species"
 <p>We now have a matrix containing all the similarity measures between any pair of books from Charles Darwin! We can now use this matrix to quickly extract the information we need, i.e., the distance between one book and one or several others. </p>
 <p>As a first step, we will display which books are the most similar to "<em>On the Origin of Species</em>," more specifically we will produce a bar chart showing all books ranked by how similar they are to Darwin's landmark work.</p>
@@ -1973,7 +1989,7 @@ sim_df
 # Import libraries
 import matplotlib.pyplot as plt
 
-# Select the column corresponding to "On the Origin of Species" and 
+# Select the column corresponding to "On the Origin of Species" and
 v = sim_df['OriginofSpecies']
 
 # Sort by ascending scores
@@ -1997,7 +2013,7 @@ plt.title('Books similar to "On the Origin of Species"')
 
 ![png](/assets/img/book_recommendations_files/book_recommendations_21_1.png)
 
-
+---
 ## 12. Which books have similar content?
 <p>This turns out to be extremely useful if we want to determine a given book's most similar work. For example, we have just seen that if you enjoyed "<em>On the Origin of Species</em>," you can read books discussing similar concepts such as "<em>The Variation of Animals and Plants under Domestication</em>" or "<em>The Descent of Man, and Selection in Relation to Sex</em>." If you are familiar with Darwin's work, these suggestions will likely seem natural to you. Indeed, <em>On the Origin of Species</em> has a whole chapter about domestication and <em>The Descent of Man, and Selection in Relation to Sex</em> applies the theory of natural selection to human evolution. Hence, the results make sense.</p>
 <p>However, we now want to have a better understanding of the big picture and see how Darwin's books are generally related to each other (in terms of topics discussed). To this purpose, we will represent the whole similarity matrix as a dendrogram, which is a standard tool to display such data. <strong>This last approach will display all the information about book similarities at once.</strong> For example, we can find a book's closest relative but, also, we can visualize which groups of books have similar topics (e.g., the cluster about Charles Darwin personal life with his autobiography and letters). If you are familiar with Darwin's bibliography, the results should not surprise you too much, which indicates the method gives good results. Otherwise, next time you read one of the author's book, you will know which other books to read next in order to learn more about the topics it addressed.</p>
@@ -2018,3 +2034,8 @@ d = hierarchy.dendrogram(Z,leaf_font_size=8, labels=sim_df.index, orientation="l
 
 ![png](/assets/img/book_recommendations_files/book_recommendations_23_0.png)
 
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/book_recommendations).
+{: .notice}
