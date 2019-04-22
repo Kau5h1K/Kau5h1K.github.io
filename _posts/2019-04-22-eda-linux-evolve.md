@@ -1,4 +1,19 @@
+---
+layout: post
+title: "Exploring the evolution of Linux"
+tags: [ Project, python, pandas, Cleaning Data, Timeseries, Data Visualization]
+date: 2019-04-22
+excerpt: "Version control repositories like CVS, Subversion or Git store rich evolution information about a software project.<br/>
+In this project, I have read in, cleaned up and visualized a real world Git repository dataset of the Linux kernel. With almost 700k commits and thousands of contributors, there are some little data cleaning and wrangling challenges that I've encountered in addition to gaining insights about the development activities over the last 13 years."
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/eda-linux-evolve/tree/master/datasets).
+
+---
 ## 1. Introduction
 <p>Version control repositories like CVS, Subversion or Git can be a real gold mine for software developers. They contain every change to the source code including the date (the "when"), the responsible developer (the "who"), as well as little message that describes the intention (the "what") of a change.</p>
 <p><a href="https://commons.wikimedia.org/wiki/File:Tux.svg">
@@ -30,8 +45,8 @@ with open('datasets/git_log_excerpt.csv','r') as file:
     1502238384#Girish Moodalbail
     1502228709#Florian Fainelli
     1502223836#Jon Paul Maloy
-    
 
+---
 ## 2. Reading in the dataset
 <p>The dataset was created by using the command <code>git log --encoding=latin-1 --pretty="%at#%aN"</code>. The <code>latin-1</code> encoded text output was saved in a header-less csv file. In this file, each row is a commit entry with the following information:</p>
 <ul>
@@ -57,8 +72,8 @@ print(git_log.head())
     2  1501749088   Adrian Hunter
     3  1501882480       Kees Cook
     4  1497271395       Rob Clark
-    
 
+---
 ## 3. Getting an overview
 <p>The dataset contains the information about every single code contribution (a "commit") to the Linux kernel over the last 13 years. We'll first take a look at the number of authors and their commits to the repository.</p>
 
@@ -76,8 +91,8 @@ print("%s authors committed %s code changes." % (number_of_authors, number_of_co
 ```
 
     17385 authors committed 699071 code changes.
-    
 
+---
 ## 4. Finding the TOP 10 contributors
 <p>There are some very important people that changed the Linux kernel very often. To see if there are any bottlenecks, we take a look at the TOP 10 authors with the most commits.</p>
 
@@ -89,8 +104,6 @@ top_10_authors = git_log.author.value_counts()[:10]
 # Listing contents of 'top_10_authors'
 top_10_authors
 ```
-
-
 
 
     Linus Torvalds           23361
@@ -106,7 +119,7 @@ top_10_authors
     Name: author, dtype: int64
 
 
-
+---
 ## 5. Wrangling the data
 <p>For our analysis, we want to visualize the contributions over time. For this, we use the information in the <code>timestamp</code> column to create a time series-based column.</p>
 
@@ -119,8 +132,6 @@ git_log.timestamp.describe()
 ```
 
 
-
-
     count                  699071
     unique                 668448
     top       2008-09-04 05:30:19
@@ -130,7 +141,7 @@ git_log.timestamp.describe()
     Name: timestamp, dtype: object
 
 
-
+---
 ## 6. Treating wrong timestamps
 <p>As we can see from the results above, some contributors had their operating system's time incorrectly set when they committed to the repository. We'll clean up the <code>timestamp</code> column by dropping the rows with the incorrect timestamps.</p>
 
@@ -149,9 +160,6 @@ corrected_log = git_log.query('timestamp >= @first_commit_timestamp & timestamp 
 
 corrected_log.describe()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -211,7 +219,7 @@ corrected_log.describe()
 </div>
 
 
-
+---
 ## 7. Grouping commits per year
 <p>To find out how the development activity has increased over time, we'll group the commits by year and count them up.</p>
 
@@ -220,15 +228,13 @@ corrected_log.describe()
 # Counting the no. commits per year
 #commits_per_year = corrected_log.resample('AS',on='timestamp').count()
 commits_per_year = corrected_log.groupby(pd.Grouper(
-        key='timestamp', 
+        key='timestamp',
         freq='AS'
         )
     )['timestamp','author'].count()
 # Listing the first rows
 commits_per_year.head()
 ```
-
-
 
 
 <div>
@@ -289,7 +295,7 @@ commits_per_year.head()
 </div>
 
 
-
+---
 ## 8. Visualizing the history of Linux
 <p>Finally, we'll make a plot out of these counts to better see how the development effort on Linux has increased over the the last few years. </p>
 
@@ -303,8 +309,6 @@ commits_per_year.plot(kind='bar',title='commits per year',legend=False)
 ```
 
 
-
-
     <matplotlib.axes._subplots.AxesSubplot at 0x7f0abcf73358>
 
 
@@ -312,7 +316,7 @@ commits_per_year.plot(kind='bar',title='commits per year',legend=False)
 
 ![png](/assets/img/eda-linux-evolve_files/eda-linux-evolve_15_1.png)
 
-
+---
 ## 9.  Conclusion
 <p>Thanks to the solid foundation and caretaking of Linux Torvalds, many other developers are now able to contribute to the Linux kernel as well. There is no decrease of development activity at sight!</p>
 
@@ -323,9 +327,44 @@ year_with_most_commits = commits_per_year.timestamp.idxmax(axis=0)
 year_with_most_commits
 ```
 
-
-
-
     Timestamp('2016-01-01 00:00:00', freq='AS-JAN')
 
+---
+## Further Reading
+If you are more interested in mining software repositories, take a look at the following books:
 
+- Adam Tornhill: Software X-Ray. Pragmatic Programmers, 2018.
+- Christian Bird, Tim Menzies, Thomas Zimmermann: The Art and Science of Analyzing Software Data. Morgan Kaufmann, 2015.
+- Tim Menzies, Laurie Williams, Thomas Zimmermann: Perspectives on Data Science for Software Engineering. Morgan Kaufmann, 2016.
+
+---
+## Reproducibility
+
+Thanks to platforms like GitHub or SourceForge, it's easy to analyze the evolution of software projects nowadays. E. g. for this exercise, I cloned the whole Git repository of Linux (~3.6 GB) from GitHub. I copied the repository onto my hard drive with
+
+```
+git clone https://github.com/torvalds/linux.git
+```
+
+and (after a few minutes of downloading) exported the history of the relevant information with
+
+```
+git log --encoding=latin-1 --pretty="%at#%aN"
+```
+
+that printed out the commit timestamp and the author. Be sure to set an encoding explicitly and to select a separator that doesn't occur in the data.
+
+Note: In rare cases, you'll need to use a non-printable character as separator. I found the "DEVICE CONTROL TWO" Unicode character U+0012 very useful for this purpose.
+
+---
+## Next Steps
+
+There are many more parameters you can use with the --pretty option of git log. Have a look at the Git documentation for more details.
+
+If you want to know more about the Linux kernel development in general, you can dive into the official documentation and start contributing to one of the most biggest open-source projects ever! :-)
+
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/eda-linux-evolve).
+{: .notice}
