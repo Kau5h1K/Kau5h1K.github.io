@@ -13,6 +13,11 @@ project: True
 ## Data
 This project uses a dataset which is available [here](https://github.com/Kau5h1K/google-play-analysis/tree/master/datasets).The [data](https://www.kaggle.com/lava18/google-play-store-apps) for this Project was scraped from the [Google Play](https://play.google.com/store/apps?hl=en) website. While there are many popular datasets for Apple App Store, there aren't many for Google Play apps, which is partially due to the increased difficulty in scraping the latter as compared to the former.
 
+## NOTE
+
+Since Github scrubs rendering javascript and interactive plots (such as bokeh, plotly), [here's a rendered version](https://nbviewer.jupyter.org/github/Kau5h1K/google-play-analysis/blob/master/google-play-analysis.ipynb) by Jupyter nbviewer.   
+{: .notice}
+
 ---
 ## 1. Google Play Store apps and reviews
 <p>Mobile apps are everywhere. They are easy to create and can be lucrative. Because of these two factors, more and more apps are being developed. In this notebook, we will do a comprehensive analysis of the Android app market by comparing over ten thousand apps in Google Play across different categories. We'll look for insights in the data to devise strategies to drive growth and retention.</p>
