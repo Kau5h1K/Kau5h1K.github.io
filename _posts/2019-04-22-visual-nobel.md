@@ -1001,6 +1001,8 @@ nobel.columns
 <p>Before you leave, what was again the name of the youngest winner ever who in 2014 got the prize for "[her] struggle against the suppression of children and young people and for the right of all children to education"?</p>
 
 
+
+
 ```python
 # The name of the youngest winner of the Nobel Prize as of 2016
 youngest_winner = nobel.nsmallest(n=1,columns='age').full_name.str.split(' ').str[1].values[0]
