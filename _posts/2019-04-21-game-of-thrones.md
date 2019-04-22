@@ -3,7 +3,7 @@ layout: post
 title: "Game of Thrones analysis with Networks"
 date: 2019-04-21
 tags: [ Project, python, networkx, pagerank, betweenness_centrality, degree_centrality]
-excerpt: "Jon Snow, Daenerys Targaryen, or Tyrion Lannister? Who is the most important character in Game of Thrones? Let's see what mathematics can tell us about this!
+excerpt: "Jon Snow, Daenerys Targaryen, or Tyrion Lannister? Who is the most important character in Game of Thrones? Let's see what mathematics can tell us about this! <br /> 
 In this project, I look at the character co-occurrence network and its evolution over the five books in R.R. Martin's hugely popular book series A Song of Ice and Fire (perhaps better known as the TV show Game of Thrones). I also look at how the importance of the characters changes over the books using different centrality measures."
 comments: True
 project: True
