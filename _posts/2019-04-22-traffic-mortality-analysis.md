@@ -1,4 +1,19 @@
+---
+layout: post
+title: "Minimizing Traffic Mortality in the USA"
+tags: [ Project, python, pandas, Cleaning Data, Shell, Unsupervised Learning, Supervised Learning, scikit-learn, Data Visualization, Seaborn, KMeans, PCA, Clusters, multivariate linear regression ]
+date: 2019-04-22
+excerpt: "While the rate of fatal road accidents has been decreasing steadily since the 80s, the past ten years have seen a stagnation in this reduction. Coupled with the increase in number of miles driven in the nation, the total number of traffic related-fatalities has now reached a ten year high and is rapidly increasing.<br/>
+By looking at the demographics of traﬃc accident victims for each US state, we find that there is a lot of variation between states. Now we want to understand if there are patterns in this variation in order to derive suggestions for a policy action plan. In particular, instead of implementing a costly nation-wide plan we want to focus on groups of states with similar profiles. How can we find such groups in a statistically sound way and communicate the result effectively?"
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/traffic-mortality-analysis/tree/master/datasets).
+
+---
 ## 1. The raw data files and their format
 <p><img src="https://s3.amazonaws.com/assets.datacamp.com/production/project_462/img/car-accident.jpg" alt=""></p>
 <p>While the rate of fatal road accidents has been decreasing steadily since the 80s, the past ten years have seen a stagnation in this reduction. Coupled with the increase in number of miles driven in the nation, the total number of traffic related-fatalities has now reached a ten year high and is rapidly increasing.</p>
@@ -28,7 +43,7 @@ accidents_head
     ['/home/repl']
     ['datasets']
     ['miles-driven.csv', 'road-accidents.csv']
-    
+
 
 
 
@@ -55,7 +70,7 @@ accidents_head
      'Florida|17.9|21|29|94']
 
 
-
+---
 ## 2. Read in and get an overview of the data
 <p>Next, we will orient ourselves to get to know the data with which we are dealing.</p>
 
@@ -80,7 +95,7 @@ car_acc.tail()
 ```
 
     There are 51 rows and 5 columns.
-    
+
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 51 entries, 0 to 50
     Data columns (total 5 columns):
@@ -92,7 +107,7 @@ car_acc.tail()
     dtypes: float64(1), int64(3), object(1)
     memory usage: 2.1+ KB
     None
-    
+
 
 
 
@@ -168,7 +183,7 @@ car_acc.tail()
 </div>
 
 
-
+---
 ## 3. Create a textual and a graphical summary of the data
 <p>We now have an idea of what the dataset looks like. To further familiarize ourselves with this data, we will calculate summary statistics and produce a graphical overview of the data. The graphical overview is good to get a sense for the distribution of variables within the data and could consist of one histogram per column. It is often a good idea to also explore the pairwise relationship between all columns in the data set by using a using pairwise scatter plots (sometimes referred to as a "scatterplot matrix").</p>
 
@@ -195,7 +210,7 @@ sns.pairplot(data=car_acc)
     50%               15.600000        34.000000          30.000000   
     75%               18.500000        38.000000          33.000000   
     max               23.900000        54.000000          44.000000   
-    
+
            perc_fatl_1st_time  
     count            51.00000  
     mean             88.72549  
@@ -205,7 +220,7 @@ sns.pairplot(data=car_acc)
     50%              88.00000  
     75%              95.00000  
     max             100.00000  
-    
+
 
 
 
@@ -217,7 +232,7 @@ sns.pairplot(data=car_acc)
 
 ![png](/assets/img/traffic-mortality-analysis_files/traffic-mortality-analysis_5_2.png)
 
-
+---
 ## 4. Quantify the association of features and accidents
 <p>We can already see some potentially interesting relationships between the target variable (the number of fatal accidents) and the feature variables (the remaining three columns).</p>
 <p>To quantify the pairwise relationships that we observed in the scatter plots, we can compute the Pearson correlation coefficient matrix. The Pearson correlation coefficient is one of the most common methods to quantify correlation between variables, and by convention, the following thresholds are usually used:</p>
@@ -296,7 +311,7 @@ corr_columns
 </div>
 
 
-
+---
 ## 5. Fit a multivariate linear regression
 <p>From the correlation table, we see that the amount of fatal accidents is most strongly correlated with alcohol consumption (first row). But in addition, we also see that some of the features are correlated with each other, for instance, speeding and alcohol consumption are positively correlated. We, therefore, want to compute the association of the target with each feature while adjusting for the effect of the remaining features. This can be done using multivariate linear regression.</p>
 <p>Both the multivariate regression and the correlation measure how strongly the features are associated with the outcome (fatal accidents). When comparing the regression coefficients with the correlation coefficients, we will see that they are slightly different. The reason for this is that the multiple regression computes the association of a feature with an outcome, given the association with all other features, which is not accounted for when calculating the correlation coefficients.</p>
@@ -327,7 +342,7 @@ fit_coef
     array([-0.04180041,  0.19086404,  0.02473301])
 
 
-
+---
 ## 6. Perform PCA on standardized data
 <p>We have learned that alcohol consumption is weakly associated with the number of fatal accidents across states. This could lead us to conclude that alcohol consumption should be a focus for further investigations and maybe strategies should divide states into high versus low alcohol consumption in accidents. But there are also associations between  alcohol consumptions and the other two features, so it might be worth trying to split the states in a way that accounts for all three features.</p>
 <p>One way of clustering the data is to use PCA to visualize data in reduced dimensional space where we can try to pick up patterns by eye. PCA uses the absolute variance to calculate the overall variance explained for each principal component, so it is important that the features are on a similar scale (unless we would have a particular reason that one feature should be weighted more).</p>
@@ -360,12 +375,12 @@ print("The cumulative variance of the first two principal components is {}".form
 ```
 
     The cumulative variance of the first two principal components is 0.7947
-    
+
 
 
 ![png](/assets/img/traffic-mortality-analysis_files/traffic-mortality-analysis_11_1.png)
 
-
+---
 ## 7. Visualize the first two principal components
 <p>The first two principal components enable visualization of the data in two dimensions while capturing a high proportion of the variation (79%) from all three features: speeding, alcohol influence, and first-time accidents. This enables us to use our eyes to try to discern patterns in the data with the goal to find groups of similar states. Although clustering algorithms are becoming increasingly efficient, human pattern recognition is an easily accessible and very efficient method of assessing patterns in data.</p>
 <p>We will create a scatter plot of the first principle components and explore how the states cluster together in this visualization.</p>
@@ -394,7 +409,7 @@ plt.scatter(p_comp1,p_comp2)
 
 ![png](/assets/img/traffic-mortality-analysis_files/traffic-mortality-analysis_13_1.png)
 
-
+---
 ## 8. Find clusters of similar states in the data
 <p>It was not entirely clear from the PCA scatter plot how many groups in which the states cluster. To assist with identifying a reasonable number of clusters, we can use KMeans clustering by creating a scree plot and finding the "elbow", which is an indication of when the addition of more clusters does not add much explanatory power.</p>
 
@@ -412,7 +427,7 @@ for k in ks:
     km.fit(features_scaled)
     # Append the inertia for `km` to the list of inertias
     inertias.append(km.inertia_)
-    
+
 # Plot the results in a line plot
 plt.plot(ks, inertias, marker='o')
 ```
@@ -427,19 +442,19 @@ plt.plot(ks, inertias, marker='o')
 
 ![png](/assets/img/traffic-mortality-analysis_files/traffic-mortality-analysis_15_1.png)
 
-
+---
 ## 9. KMeans to visualize clusters in the PCA scatter plot
 <p>Since there wasn't a clear elbow in the scree plot, assigning the states to either two or three clusters is a reasonable choice, and we will resume our analysis using three clusters. Let's see how the PCA scatter plot looks if we color the states according to the cluster to which they are assigned.</p>
 
 
 ```python
-# Create a KMeans object with 3 clusters, use random_state=8 
+# Create a KMeans object with 3 clusters, use random_state=8
 km = KMeans(3,random_state=8)
 
 # Fit the data to the `km` object
 km.fit(features_scaled)
 # Create a scatter plot of the first two principal components
-# and color it according to the KMeans cluster assignment 
+# and color it according to the KMeans cluster assignment
 plt.scatter(p_comps[:,0],p_comps[:,1],c=km.labels_)
 ```
 
@@ -453,7 +468,7 @@ plt.scatter(p_comps[:,0],p_comps[:,1],c=km.labels_)
 
 ![png](/assets/img/traffic-mortality-analysis_files/traffic-mortality-analysis_17_1.png)
 
-
+---
 ## 10. Visualize the feature differences between the clusters
 <p>Thus far, we have used both our visual interpretation of the data and the KMeans clustering algorithm to reveal patterns in the data, but what do these patterns mean?</p>
 <p>Remember that the information we have used to cluster the states into three distinct groups are the percentage of drivers speeding, under alcohol influence and that has not previously been involved in an accident. We used these clusters to visualize how the states group together when considering the first two principal components. This is good for us to understand structure in the data, but not always easy to understand, especially not if the findings are to be communicated to a non-specialist audience.</p>
@@ -481,7 +496,7 @@ sns.violinplot(data=melt_car,x='percent',y='measurement',hue='cluster')
 
 ![png](/assets/img/traffic-mortality-analysis_files/traffic-mortality-analysis_19_1.png)
 
-
+---
 ## 11. Compute the number of accidents within each cluster
 <p>Now it is clear that different groups of states may require different interventions. Since resources and time are limited, it is useful to start off with an intervention in one of the three groups first. Which group would this be? To determine this, we will include data on how many miles are driven in each state, because this will help us to compute the total number of fatal accidents in each state. Data on miles driven is available in another tab-delimited text file. We will assign this new information to a column in the DataFrame and create a violin plot for how many total fatal traffic accidents there are within each state cluster.</p>
 
@@ -565,7 +580,7 @@ car_acc_miles.groupby('cluster')['num_drvr_fatl_col'].agg(['count','mean','sum']
 
 ![png](/assets/img/traffic-mortality-analysis_files/traffic-mortality-analysis_21_1.png)
 
-
+---
 ## 12. Make a decision when there is no clear right choice
 <p>As we can see, there is no obvious correct choice regarding which cluster is the most important to focus on. Yet, we can still argue for a certain cluster and motivate this using our findings above. Which cluster do you think should be a focus for policy intervention and further investigation?</p>
 
@@ -574,3 +589,9 @@ car_acc_miles.groupby('cluster')['num_drvr_fatl_col'].agg(['count','mean','sum']
 # Which cluster would you choose?
 cluster_num = 2
 ```
+
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/traffic-mortality-analysis).
+{: .notice}
