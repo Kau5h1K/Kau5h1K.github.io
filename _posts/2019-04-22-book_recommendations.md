@@ -11,7 +11,7 @@ project: True
 
 ---
 ## Data
-This project uses a dataset which is available [here](https://github.com/Kau5h1K/book_recommendations/tree/master/datasets).The dataset was manually collected from [Project Gutenberg](https://www.gutenberg.org/).
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/book_recommendations/tree/master/datasets). The dataset was manually collected from [Project Gutenberg](https://www.gutenberg.org/).
 
 ---
 ## 1. Darwin's bibliography
