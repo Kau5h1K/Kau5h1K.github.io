@@ -138,7 +138,8 @@ df.groupby('version')['userid'].count()
 <p><img src="https://s3.amazonaws.com/assets.datacamp.com/production/project_184/img/mr_waffles_smiling.png" style="width:200px; float:left"> </p>
 <p>It looks like there is roughly the same number of players in each group, nice!</p>
 <p>The focus of this analysis will be on how the gate placement affects player retention, but just for fun: Let's plot the distribution of the number of game rounds players played during their first week playing the game.</p>
-
+<br/>
+<br/>
 
 ```python
 # This command makes plots appear in the notebook
