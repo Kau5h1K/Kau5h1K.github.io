@@ -1,4 +1,19 @@
+---
+layout: post
+title: "Filter passwords using NIST guidelines"
+tags: [ Project, python, pandas, Cleaning Data, Tensorflow, Natural Language Processing, NLP, National Institute of Standards and Technology, regex]
+date: 2019-04-22
+excerpt: "Almost every web service you join will require you to come up with a password. But what makes a good password? In June 2017 the National Institute of Standards and Technology (NIST) published publication 800-63B titled Digital Identity Guidelines: Authentication and Lifecycle Management. This publication doesn't tell you what is a good password, but it does have specific rules for what is a bad password.<br/>
+In this project, I have taken a list of user passwords and, using publication 800-63B, I have written code that automatically detects and flags the bad passwords."
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/password-filtering/tree/master/datasets).
+
+---
 ## 1. The NIST Special Publication 800-63B
 <p>If you – 50 years ago – needed to come up with a secret password you were probably part of a secret espionage organization or (more likely) you were pretending to be a spy when playing as a kid. Today, many of us are forced to come up with new passwords <em>all the time</em> when signing into sites and apps. As a password <em>inventeur</em> it is your responsibility to come up with good, hard-to-crack passwords. But it is also in the interest of sites and apps to make sure that you use good passwords. The problem is that it's really hard to define what makes a good password. However, <em>the National Institute of Standards and Technology</em> (NIST) knows what the second best thing is: To make sure you're at least not using a <em>bad</em> password. </p>
 <p>In this notebook, we will go through the rules in <a href="https://pages.nist.gov/800-63-3/sp800-63b.html">NIST Special Publication 800-63B</a> which details what checks a <em>verifier</em> (what the NIST calls a second party responsible for storing and verifying passwords) should perform to make sure users don't pick bad passwords. We will go through the passwords of users from a fictional company and use python to flag the users with bad passwords. But us being able to do this already means the fictional company is breaking one of the rules of 800-63B:</p>
@@ -12,7 +27,7 @@
 ```python
 # Importing the pandas module
 import pandas as pd
-# Loading in datasets/users.csv 
+# Loading in datasets/users.csv
 users = pd.read_csv('datasets/users.csv')
 
 # Printing out how many users we've got
@@ -22,7 +37,7 @@ users.head(12)
 ```
 
     982
-    
+
 
 
 
@@ -128,7 +143,7 @@ users.head(12)
 </div>
 
 
-
+---
 ## 2. Passwords should not be too short
 <p>If we take a look at the first 12 users above we already see some bad passwords. But let's not get ahead of ourselves and start flagging passwords <em>manually</em>. What is the first thing we should check according to the NIST Special Publication 800-63B?</p>
 <blockquote>
@@ -151,9 +166,6 @@ users.head(12)
 ```
 
     376
-    
-
-
 
 
 <div>
@@ -283,7 +295,7 @@ users.head(12)
 </div>
 
 
-
+---
 ## 3.  Common passwords people use
 <p>Already this simple rule flagged a couple of offenders among the first 12 users. Next up in Special Publication 800-63B is the rule that</p>
 <blockquote>
@@ -305,7 +317,6 @@ common_passwords = pd.read_csv('datasets/10_million_password_list_top_10000.txt'
 # Taking a look at the top 20
 common_passwords.head(20)
 ```
-
 
 
 
@@ -332,7 +343,7 @@ common_passwords.head(20)
     Name: 0, dtype: object
 
 
-
+---
 ## 4.  Passwords should not be common passwords
 <p>The list of passwords was ordered, with the most common passwords first, and so we shouldn't be surprised to see passwords like <code>123456</code> and <code>qwerty</code> above. As hackers also have access to this list of common passwords, it's important that none of our users use these passwords!</p>
 <p>Let's flag all the passwords in our user database that are among the top 10,000 used passwords.</p>
@@ -349,9 +360,6 @@ users.head(12)
 ```
 
     129
-    
-
-
 
 
 <div>
@@ -494,7 +502,7 @@ users.head(12)
 </div>
 
 
-
+---
 ## 5. Passwords should not be common words
 <p>Ay ay ay! It turns out many of our users use common passwords, and of the first 12 users there are already two. However, as most common passwords also tend to be short, they were already flagged as being too short. What is the next thing we should check?</p>
 <blockquote>
@@ -517,9 +525,6 @@ users.head(12)
 ```
 
     137
-    
-
-
 
 
 <div>
@@ -675,7 +680,7 @@ users.head(12)
 </div>
 
 
-
+---
 ## 6. Passwords should not be your name
 <p>It turns out many of our passwords were common English words too! Next up on the NIST list:</p>
 <blockquote>
@@ -702,9 +707,6 @@ users.head(12)
 ```
 
     50
-    
-
-
 
 
 <div>
@@ -898,8 +900,7 @@ users.head(12)
 </table>
 </div>
 
-
-
+---
 ## 7. Passwords should not be repetitive
 <p>Milford Hubbard (user number 12 above), what where you thinking!? Ok, so the last thing we are going to check is a bit tricky:</p>
 <blockquote>
@@ -916,8 +917,6 @@ users['too_many_repeats'] = users['password'].str.contains(r'(.)\1\1\1')
 # Taking a look at the users with too many repeats
 users.query('too_many_repeats == True')
 ```
-
-
 
 
 <div>
@@ -1041,7 +1040,7 @@ users.query('too_many_repeats == True')
 </div>
 
 
-
+---
 ## 8. All together now!
 <p>Now we have implemented all the basic tests for bad passwords suggested by NIST Special Publication 800-63B! What's left is just to flag all bad passwords and maybe to send these users an e-mail that strongly suggests they change their password.</p>
 
@@ -1057,9 +1056,6 @@ users.query('bad_password == True').head(25)
 ```
 
     424
-    
-
-
 
 
 <div>
@@ -1475,7 +1471,7 @@ users.query('bad_password == True').head(25)
 </div>
 
 
-
+---
 ## 9. Otherwise, the password should be up to the user
 <p>In this notebook, we've implemented the password checks recommended by the NIST Special Publication 800-63B. It's certainly possible to better implement these checks, for example, by using a longer list of common passwords. Also note that the NIST checks in no way guarantee that a chosen password is good, just that it's not obviously bad.</p>
 <p>Apart from the checks we've implemented above the NIST is also clear with what password rules should <em>not</em> be imposed:</p>
@@ -1490,3 +1486,16 @@ users.query('bad_password == True').head(25)
 # PLEASE DO NOT USE AN EXISTING PASSWORD HERE
 new_password = "qwerty123"
 ```
+
+---
+## Further Reading
+- You can [read the full NIST Special Publication 800-63B online](https://pages.nist.gov/800-63-3/sp800-63b.html).
+- This [blog post](https://www.passwordping.com/surprising-new-password-guidelines-nist/) also gives you a summary of 800-63B.
+- Here is an [article](https://xato.net/today-i-am-releasing-ten-million-passwords-b6278bbe7495) explaining where the 10,000 common passwords you used in this project come from.
+- Finally, [some advice](https://xkcd.com/936/) on how to come up with a good password.
+
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/password-filtering).
+{: .notice}
