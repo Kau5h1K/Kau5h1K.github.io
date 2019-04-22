@@ -355,6 +355,7 @@ git log --encoding=latin-1 --pretty="%at#%aN"
 that printed out the commit timestamp and the author. Be sure to set an encoding explicitly and to select a separator that doesn't occur in the data.
 
 Note: In rare cases, you'll need to use a non-printable character as separator. I found the "DEVICE CONTROL TWO" Unicode character U+0012 very useful for this purpose.
+{: .notice}
 
 ---
 ## Next Steps
