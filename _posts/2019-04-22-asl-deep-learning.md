@@ -1,4 +1,19 @@
+---
+layout: post
+title: "American Sign Language recognition with Deep Learning"
+tags: [ Project, python, pandas, Data Visualization, Tensorflow, Deep Learning, keras, Sequential, CNN, convolutional neural network]
+date: 2019-04-22
+excerpt: "American Sign Language (ASL) is the primary language used by many deaf individuals in North America, and it is also used by hard-of-hearing and hearing individuals. The language is as rich as spoken languages and employs signs made with the hand, along with facial gestures and bodily postures.<br/>
+In this project, I trained a convolutional neural network to classify images of ASL letters. "
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/asl-deep-learning/tree/master/datasets).
+
+---
 ## 1. American Sign Language (ASL)
 <p>American Sign Language (ASL) is the primary language used by many deaf individuals in North America, and it is also used by hard-of-hearing and hearing individuals.  The language is as rich as spoken languages and employs signs made with the hand, along with facial gestures and bodily postures.</p>
 <p><img src="https://s3.amazonaws.com/assets.datacamp.com/production/project_509/img/asl.png" alt="american sign language"></p>
@@ -14,7 +29,7 @@
 ```python
 # Import packages and set numpy random seed
 import numpy as np
-np.random.seed(5) 
+np.random.seed(5)
 import tensorflow as tf
 tf.set_random_seed(2)
 from datasets import sign_language
@@ -24,7 +39,7 @@ import matplotlib.pyplot as plt
 # Load pre-shuffled training and test datasets
 (x_train, y_train), (x_test, y_test) = sign_language.load_data()
 ```
-
+---
 ## 2. Visualize the training data
 <p>Now we'll begin by creating a list of string-valued labels containing the letters that appear in the dataset.  Then, we visualize the first several images in the training data, along with their corresponding labels.</p>
 
@@ -45,7 +60,7 @@ plt.show()
 
 ![png](/assets/img/asl-deep-learning_files/asl-deep-learning_3_0.png)
 
-
+---
 ## 3. Examine the dataset
 <p>Let's examine how many images of each letter can be found in the dataset.</p>
 <p>Remember that dataset has already been split into training and test sets for you, where <code>x_train</code> and <code>x_test</code> contain the images, and <code>y_train</code> and <code>y_test</code> contain their corresponding labels.</p>
@@ -79,8 +94,8 @@ print("\tA: {}, B: {}, C: {}".format(num_A_test, num_B_test, num_C_test))
     	A: 540, B: 528, C: 532
     Test set:
     	A: 118, B: 144, C: 138
-    
 
+---
 ## 4. One-hot encode the data
 <p>Currently, our labels for each of the letters are encoded as categorical integers, where <code>'A'</code>, <code>'B'</code> and <code>'C'</code> are encoded as <code>0</code>, <code>1</code>, and <code>2</code>, respectively.  However, recall that Keras models do not accept labels in this format, and we must first one-hot encode the labels before supplying them to a Keras model.</p>
 <p>This conversion will turn the one-dimensional array of labels into a two-dimensional array.</p>
@@ -104,6 +119,7 @@ y_train_OH = np_utils.to_categorical(y_train)
 y_test_OH = np_utils.to_categorical(y_test)
 ```
 
+---
 ## 5. Define the model
 <p>Now it's time to define a convolutional neural network to classify the data.</p>
 <p>This network accepts an image of an American Sign Language letter as input.  The output layer returns the network's predicted probabilities that the image belongs in each category.</p>
@@ -116,7 +132,7 @@ from keras.models import Sequential
 
 model = Sequential()
 # First convolutional layer accepts image input
-model.add(Conv2D(filters=5, kernel_size=5, padding='same', activation='relu', 
+model.add(Conv2D(filters=5, kernel_size=5, padding='same', activation='relu',
                         input_shape=(50, 50, 3)))
 # Add a max pooling layer
 model.add(MaxPooling2D((4,4)))
@@ -151,19 +167,20 @@ model.summary()
     Trainable params: 2,678
     Non-trainable params: 0
     _________________________________________________________________
-    
 
+---
 ## 6. Compile the model
 <p>After we have defined a neural network in Keras, the next step is to compile it! </p>
 
 
 ```python
 # Compile the model
-model.compile(optimizer='rmsprop', 
-              loss='categorical_crossentropy', 
+model.compile(optimizer='rmsprop',
+              loss='categorical_crossentropy',
               metrics=['accuracy'])
 ```
 
+---
 ## 7. Train the model
 <p>Once we have compiled the model, we're ready to fit it to the training data.</p>
 
@@ -177,8 +194,8 @@ hist = model.fit(x_train,y_train_OH,epochs=2)
     1600/1600 [==============================] - 3s 2ms/step - loss: 0.8938 - acc: 0.7150
     Epoch 2/2
     1600/1600 [==============================] - 3s 2ms/step - loss: 0.4544 - acc: 0.9356
-    
 
+---
 ## 8. Test the model
 <p>To evaluate the model, we'll use the test dataset.  This will tell us how the network performs when classifying images it has never seen before!</p>
 <p>If the classification accuracy on the test dataset is similar to the training dataset, this is a good sign that the model did not overfit to the training data.  </p>
@@ -186,15 +203,15 @@ hist = model.fit(x_train,y_train_OH,epochs=2)
 
 ```python
 # Obtain accuracy on test set
-score = model.evaluate(x=x_test, 
+score = model.evaluate(x=x_test,
                        y=y_test_OH,
                        verbose=0)
 print('Test accuracy:', score[1])
 ```
 
     Test accuracy: 0.98
-    
 
+---
 ## 9. Visualize mistakes
 <p>Hooray!  Our network gets very high accuracy on the test set!  </p>
 <p>The final step is to take a look at the images that were incorrectly classified by the model.  Do any of the mislabeled images look relatively difficult to classify, even to the human eye?  </p>
@@ -222,3 +239,8 @@ for i, idx in enumerate(bad_test_idxs):
 
 ![png](/assets/img/asl-deep-learning_files/asl-deep-learning_17_0.png)
 
+
+---
+## Dig deeper?
+You can find out more about this project at [Github](https://github.com/Kau5h1K/asl-deep-learning).
+{: .notice}
