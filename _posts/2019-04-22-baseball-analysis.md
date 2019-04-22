@@ -1,4 +1,16 @@
-
+---
+layout: post
+title: "Data Analysis in Baseball using MLB's Statcast data"
+date: 2019-04-21
+tags: [ Project, python, Data Visualization, Statcast, Aaron Judge, Giancarlo Stanton]
+excerpt: "There's a new era of data analysis in baseball. Using a new technology called Statcast, Major League Baseball is now collecting the precise location and movements of its baseballs and players. In this project, I used Statcast data to compare the home runs of two of baseball's brightest (and largest) stars, Aaron Judge (6'7") and Giancarlo Stanton (6'6"), both of whom now play for the New York Yankees."
+comments: True
+project: True
+---
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/baseball-analysis/tree/master/datasets).The dataset used in this project is from [Baseball Savant](https://baseballsavant.mlb.com/about).
+---
 ## 1. The Statcast revolution
 <p><img style="float: left;margin:5px 20px 5px 1px" src="https://s3.amazonaws.com/assets.datacamp.com/production/project_250/img/judge_wide.jpg"></p>
 <p>This is Aaron Judge. Judge is one of the physically largest players in Major League Baseball standing 6 feet 7 inches (2.01 m) tall and weighing 282 pounds (128 kg). He also hit the <a href="https://www.mlb.com/news/aaron-judge-sets-statcast-exit-velocity-record/c-235640846">hardest home run</a> ever recorded. How do we know this? <strong>Statcast</strong>.</p>
@@ -18,7 +30,7 @@ judge = pd.read_csv('datasets/judge.csv')
 # Load Giancarlo Stanton's Statcast data
 stanton = pd.read_csv('datasets/stanton.csv')
 ```
-
+---
 ## 2. What can Statcast measure?
 <p>The better question might be, what can't Statcast measure?</p>
 <blockquote>
@@ -548,7 +560,7 @@ judge.tail()
 </div>
 
 
-
+---
 ## 3. Aaron Judge and Giancarlo Stanton, prolific sluggers
 <p><img style="float: left;margin:5px 20px 5px 1px" src="https://s3.amazonaws.com/assets.datacamp.com/production/project_250/img/stanton_wide.jpg"></p>
 <p>This is Giancarlo Stanton. He is also a very large human being, standing 6 feet 6 inches tall and weighing 245 pounds. Despite not wearing the same jersey as Judge in the pictures provided, in 2018 they will be teammates on the New York Yankees. They are similar in a lot of ways, one being that they hit a lot of home runs. Stanton and Judge led baseball in home runs in 2017, with <a href="https://www.youtube.com/watch?v=tJ6Bz5P6dg4">59</a> and <a href="https://www.youtube.com/watch?v=Gw3pFHMM9fk">52</a>, respectively. These are exceptional totals - the player in third "only" had 45 home runs.</p>
@@ -584,7 +596,7 @@ print(stanton_events_2017.value_counts())
     triple                         3
     strikeout_double_play          1
     Name: events, dtype: int64
-    
+
     Giancarlo Stanton batted ball event totals, 2017:
     field_out                    239
     strikeout                    161
@@ -602,8 +614,8 @@ print(stanton_events_2017.value_counts())
     strikeout_double_play          2
     pickoff_1b                     1
     Name: events, dtype: int64
-    
 
+---
 ## 4. Analyzing home runs with Statcast data
 <p>So Judge walks and strikes out more than Stanton. Stanton flies out more than Judge. But let's get into their hitting profiles in more detail. Two of the most groundbreaking Statcast metrics are launch angle and exit velocity:</p>
 <ul>
@@ -647,7 +659,7 @@ sns.kdeplot(stanton_hr.launch_speed, stanton_hr.launch_angle, cmap="Blues", shad
 
 ![png](/assets/img/baseball-analysis_files/baseball-analysis_7_2.png)
 
-
+---
 ## 5. Home runs by pitch velocity
 <p>It appears that Stanton hits his home runs slightly lower and slightly harder than Judge, though this needs to be taken with a grain of salt given the small sample size of home runs.</p>
 <p>Not only does Statcast measure the velocity of the ball coming off of the bat, it measures the velocity of the ball coming out of the pitcher's hand and begins its journey towards the plate. We can use this data to compare Stanton and Judge's home runs in terms of pitch velocity. Next you'll find box plots displaying the five-number summaries for each player: minimum, first quartile, median, third quartile, and maximum.</p>
@@ -671,7 +683,7 @@ sns.boxplot(x=judge_stanton_hr.player_name,y=judge_stanton_hr.release_speed,colo
 
 ![png](/assets/img/baseball-analysis_files/baseball-analysis_9_1.png)
 
-
+---
 ## 6. Home runs by pitch location (I)
 <p>So Judge appears to hit his home runs off of faster pitches than Stanton. We might call Judge a fastball hitter. Stanton appears agnostic to pitch speed and likely pitch movement since slower pitches (e.g. curveballs, sliders, and changeups) tend to have more break. Statcast <em>does</em> track pitch movement and type but let's move on to something else: <strong>pitch location</strong>. Statcast tracks the zone the pitch is in when it crosses the plate. The zone numbering looks like this (from the catcher's point of view):</p>
 <p><img style="margin:5px 20px 5px 1px; width:20%;" src="https://s3.amazonaws.com/assets.datacamp.com/production/project_250/img/zone.png"></p>
@@ -694,7 +706,7 @@ def assign_x_coord(row):
     if row.zone in [3, 6, 9]:
         return 3
 ```
-
+---
 ## 7. Home runs by pitch location (II)
 <p>And let's do the same but for y-coordinates.</p>
 
@@ -715,7 +727,7 @@ def assign_y_coord(row):
     if row.zone in [7,8,9]:
         return 1
 ```
-
+---
 ## 8. Aaron Judge's home run zone
 <p>Now we can apply the functions we've created then construct our 2D histograms. First, for Aaron Judge (again, for pitches in the strike zone that resulted in home runs).</p>
 
@@ -740,7 +752,7 @@ cb.set_label('Counts in Bin')
 
 ![png](/assets/img/baseball-analysis_files/baseball-analysis_15_0.png)
 
-
+---
 ## 9. Giancarlo Stanton's home run zone
 <p>And now for Giancarlo Stanton.</p>
 
@@ -765,7 +777,7 @@ cb.set_label('Counts in Bin')
 
 ![png](/assets/img/baseball-analysis_files/baseball-analysis_17_0.png)
 
-
+---
 ## 10. Should opposing pitchers be scared?
 <p>A few takeaways:</p>
 <ul>
@@ -782,3 +794,11 @@ cb.set_label('Counts in Bin')
 # Should opposing pitchers be wary of Aaron Judge and Giancarlo Stanton
 should_pitchers_be_scared = True
 ```
+---
+## Further Reading
+If you'd like more Statcast content to digest, this video [(A culmination of special Statcast records in 2017 from MLB's YouTube channel)](https://www.youtube.com/watch?v=tzPKlQXo6hk) and this article [(Major League Baseball's Statcast Can Break Sabermetrics by Emma Baccellieri)](https://deadspin.com/major-league-baseballs-statcast-can-break-sabermetrics-1820987737) are excellent.
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/network-of-thrones).
+{: .notice}
