@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Filter passwords using NIST guidelines"
-tags: [ Project, python, pandas, Cleaning Data, Tensorflow, Natural Language Processing, NLP, National Institute of Standards and Technology, regex]
+title: "Analyze scraped Google Play Store data to understand the Android app market"
+tags: [ Project, python, pandas, Cleaning Data, Plotly, Data visualization, seaborn, NLP, Sentiment analysis, Natural Language processing]
 date: 2019-04-22
 excerpt: "Mobile apps are everywhere. They are easy to create and can be lucrative. Because of these two factors, more and more apps are being developed.<br/>
 In this Project, I have done a comprehensive analysis of the Android app market by comparing over ten thousand apps in Google Play across different categories. I also looked for insights in the data to devise strategies to drive growth and retention."
