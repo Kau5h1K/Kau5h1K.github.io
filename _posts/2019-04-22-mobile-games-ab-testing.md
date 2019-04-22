@@ -1,4 +1,19 @@
+---
+layout: post
+title: "Player retention A/B testing with Cookie Cats"
+tags: [ Project, python, pandas, Cleaning Data, Statistical Learning, bootstrap analysis, null hypothesis, significance test, p-value]
+date: 2019-04-22
+excerpt: "Cookie Cats is a hugely popular mobile puzzle game developed by Tactile Entertainment. It's a classic 'connect three' style puzzle game where the player must connect tiles of the same color in order to clear the board and win the level.<br/>
+As players progress through the game they will encounter gates that force them to wait some time before they can progress or make an in-app purchase. In this project, I have analyzed the result of an A/B test where the first gate in Cookie Cats was moved from level 30 to level 40. In particular, I  have studied the impact on player retention."
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/mobile-games-ab-testing/tree/master/datasets).
+
+---
 ## 1. Of cats and cookies
 <p><a href="https://www.facebook.com/cookiecatsgame">Cookie Cats</a> is a hugely popular mobile puzzle game developed by <a href="http://tactile.dk">Tactile Entertainment</a>. It's a classic "connect three"-style puzzle game where the player must connect tiles of the same color to clear the board and win the level. It also features singing cats. We're not kidding! Check out this short demo:</p>
 <p><a href="https://youtu.be/GaP5f0jVTWE"><img src="https://s3.amazonaws.com/assets.datacamp.com/production/project_184/img/cookie_cats_video.jpeg" style="width: 500px"></a></p>
@@ -91,7 +106,7 @@ df.head()
 </div>
 
 
-
+---
 ## 2. The AB-test data
 <p>The data we have is from 90,189 players that installed the game while the AB-test was running. The variables are:</p>
 <ul>
@@ -118,7 +133,7 @@ df.groupby('version')['userid'].count()
     Name: userid, dtype: int64
 
 
-
+---
 ## 3. The distribution of game rounds
 <p><img src="https://s3.amazonaws.com/assets.datacamp.com/production/project_184/img/mr_waffles_smiling.png" style="width:200px; float:left"> </p>
 <p>It looks like there is roughly the same number of players in each group, nice!</p>
@@ -129,7 +144,7 @@ df.groupby('version')['userid'].count()
 # This command makes plots appear in the notebook
 %matplotlib inline
 
-# Counting the number of players for each number of gamerounds 
+# Counting the number of players for each number of gamerounds
 plot_df = df.groupby('sum_gamerounds')['userid'].count()
 
 # Plotting the distribution of players that played 0 to 100 game rounds
@@ -148,7 +163,7 @@ ax.set_ylabel("UserId")
 
 ![png](/assets/img/mobile-games-ab-testing_files/mobile-games-ab-testing_5_1.png)
 
-
+---
 ## 4. Overall 1-day retention
 <p>In the plot above we can see that some players install the game but then never play it (0 game rounds), some players just play a couple of game rounds in their first week, and some get really hooked!</p>
 <p>What we want is for players to like the game and to get hooked. A common metric in the video gaming industry for how fun and engaging a game is <em>1-day retention</em>: The percentage of players that comes back and plays the game <em>one day</em> after they have installed it.  The higher 1-day retention is, the easier it is to retain players and build a large player base. </p>
@@ -166,7 +181,7 @@ df['retention_1'].mean()*100
     44.52095044850259
 
 
-
+---
 ## 5. 1-day retention by AB-group
 <p><img src="https://s3.amazonaws.com/assets.datacamp.com/production/project_184/img/belle_cookie.png" style="width:200px; float:right"> </p>
 <p>So, a little less than half of the players come back one day after installing the game. Now that we have a benchmark, let's look at how 1-day retention differs between the two AB-groups.</p>
@@ -186,7 +201,7 @@ df.groupby('version')['retention_1'].mean()*100
     Name: retention_1, dtype: float64
 
 
-
+---
 ## 6. Should we be confident in the difference?
 <p>It appears that there was a slight decrease in 1-day retention when the gate was moved to level 40 (44.2%) compared to the control when it was at level 30 (44.8%). It's a small change, but even small changes in retention can have a large impact. But while we are certain of the difference in the data, how certain should we be that a gate at level 40 will be worse in the future?</p>
 <p>There are a couple of ways we can get at the certainty of these retention numbers. Here we will use bootstrapping: We will repeatedly re-sample our dataset (with replacement) and calculate 1-day retention for those samples. The variation in 1-day retention will give us an indication of how uncertain the retention numbers are.</p>
@@ -199,10 +214,10 @@ iterations = 500
 for i in range(iterations):
     boot_mean = df.sample(frac=1,replace=True).groupby('version')['retention_1'].mean()
     boot_1d.append(boot_mean)
-    
+
 # Transforming the list to a DataFrame
 boot_1d = pd.DataFrame(boot_1d)
-    
+
 # A Kernel Density Estimate plot of the bootstrap distributions
 boot_1d.plot.density()
 ```
@@ -217,7 +232,7 @@ boot_1d.plot.density()
 
 ![png](/assets/img/mobile-games-ab-testing_files/mobile-games-ab-testing_11_1.png)
 
-
+---
 ## 7. Zooming in on the difference
 <p>These two distributions above represent the bootstrap uncertainty over what the underlying 1-day retention could be for the two AB-groups. Just eyeballing this plot, we can see that there seems to be some evidence of a difference, albeit small. Let's zoom in on the difference in 1-day retention</p>
 <p>(<em>Note that in this notebook we have limited the number of bootstrap replication to 500 to keep the calculations quick. In "production" we would likely increase this to a much larger number, say, 10 000.</em>)</p>
@@ -242,7 +257,7 @@ ax.set_xlabel('% difference between the two AB-groups')
 
 ![png](/assets/img/mobile-games-ab-testing_files/mobile-games-ab-testing_13_1.png)
 
-
+---
 ## 8. The probability of a difference
 <p><img src="https://s3.amazonaws.com/assets.datacamp.com/production/project_184/img/ziggy_smiling.png" style="width:200px; float:left"> </p>
 <p>From this chart, we can see that the most likely % difference is around 1% - 2%, and that most of the distribution is above 0%, in favor of a gate at level 30. But what is the <em>probability</em> that the difference is above 0%? Let's calculate that as well.</p>
@@ -262,7 +277,7 @@ prob = (boot_1d['diff'] > 0).mean()
     '0.98'
 
 
-
+---
 ## 9. 7-day retention by AB-group
 <p>The bootstrap analysis tells us that there is a high probability that 1-day retention is better when the gate is at level 30. However, since players have only been playing the game for one day, it is likely that most players haven't reached level 30 yet. That is, many players won't have been affected by the gate, even if it's as early as level 30. </p>
 <p>But after having played for a week, more players should have reached level 40, and therefore it makes sense to also look at 7-day retention. That is: What percentage of the people that installed the game also showed up a week later to play the game again.</p>
@@ -283,7 +298,7 @@ df.groupby('version')['retention_7'].mean()*100
     Name: retention_7, dtype: float64
 
 
-
+---
 ## 10. Bootstrapping the difference again
 <p>Like with 1-day retention, we see that 7-day retention is slightly lower (18.2%) when the gate is at level 40 than when the gate is at level 30 (19.0%). This difference is also larger than for 1-day retention, presumably because more players have had time to hit the first gate. We also see that the <em>overall</em> 7-day retention is lower than the <em>overall</em> 1-day retention; fewer people play a game a week after installing than a day after installing.</p>
 <p>But as before, let's use bootstrap analysis to figure out how certain we should be of the difference between the AB-groups.</p>
@@ -295,7 +310,7 @@ boot_7d = []
 for i in range(500):
     boot_mean = df.sample(frac=1,replace=True).groupby('version')['retention_7'].mean()
     boot_7d.append(boot_mean)
-    
+
 # Transforming the list to a DataFrame
 boot_7d = pd.DataFrame(boot_7d)
 # Adding a column with the % difference between the two AB-groups
@@ -322,7 +337,7 @@ prob = (boot_7d['diff'] > 0).mean()
 
 ![png](/assets/img/mobile-games-ab-testing_files/mobile-games-ab-testing_19_1.png)
 
-
+---
 ## 11.  The conclusion
 <p>The bootstrap result tells us that there is strong evidence that 7-day retention is higher when the gate is at level 30 than when it is at level 40. The conclusion is: If we want to keep retention high — both 1-day and 7-day retention — we should <strong>not</strong> move the gate from level 30 to level 40. There are, of course, other metrics we could look at, like the number of game rounds played or how much in-game purchases are made by the two AB-groups. But retention <em>is</em> one of the most important metrics. If we don't retain our player base, it doesn't matter how much money they spend in-game.</p>
 <p><img src="https://s3.amazonaws.com/assets.datacamp.com/production/project_184/img/cookie_yellow.png" style="width:100px; float:center"> </p>
@@ -334,3 +349,13 @@ prob = (boot_7d['diff'] > 0).mean()
 # Should we move the gate from level 30 to level 40 ?
 move_to_level_40 = False # True or False ?
 ```
+
+---
+## Further Reading
+- Now that you've analyzed some Cookie Cats data, maybe you want to take the actual game for a spin. Perhaps you can think of more things you would like to AB-test in this game?
+
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/mobile-games-ab-testing).
+{: .notice}
