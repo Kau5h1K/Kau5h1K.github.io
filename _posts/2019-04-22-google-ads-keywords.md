@@ -1,4 +1,20 @@
+---
+layout: post
+title: "Keyword Generation for Google Ads"
+tags: [ Project, python, pandas, DataFrame]
+date: 2019-04-22
+excerpt: "You work for a digital marketing agency, which is approached by a massive online retailer of furniture. You are tasked with creating a prototype set of keywords for search campaigns for their sofas section.
+<br/>
+The most important task in structuring a search engine marketing account is mapping the right keywords to the right ads and making sure they send users to the right landing pages. Having figured that out is a big part of the account setup and makes the life of the account manager much easier."
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/password-filtering/tree/master/datasets).
+
+---
 ## 1. The brief
 <p>Imagine working for a digital marketing agency, and the agency is approached by a massive online retailer of furniture. They want to test our skills at creating large campaigns for all of their website. We are tasked with creating a prototype set of keywords for search campaigns for their sofas section. The client says that they want us to generate keywords for the following products: </p>
 <ul>
@@ -77,8 +93,8 @@ print(words)
 ```
 
     ['buy', 'price', 'discount', 'promotion', 'promo', 'shop', 'budget', 'ecommerce', 'offers', 'sale']
-    
 
+---
 ## 2. Combine the words with the product names
 <p>Imagining all the possible combinations of keywords can be stressful! But not for us, because we are keyword ninjas! We know how to translate campaign briefs into Python data structures and can imagine the resulting DataFrames that we need to create.</p>
 <p>Now that we have brainstormed the words that work well with the brief that we received, it is now time to combine them with the product names to generate meaningful search keywords. We want to combine every word with every product once before, and once after, as seen in the example above.</p>
@@ -104,7 +120,7 @@ for product in products:
         # Append combinations
         keywords_list.append([product, product + ' ' + word])
         keywords_list.append([product, word + ' ' + product])
-        
+
 # Inspect keyword list
 from pprint import pprint
 pprint(keywords_list)
@@ -210,8 +226,8 @@ pprint(keywords_list)
      ['sofa beds', 'offers sofa beds'],
      ['sofa beds', 'sofa beds sale'],
      ['sofa beds', 'sale sofa beds']]
-    
 
+---
 ## 3. Convert the list of lists into a DataFrame
 <p>Now we want to convert this list of lists into a DataFrame so we can easily manipulate it and manage the final output.</p>
 
@@ -288,10 +304,10 @@ print(keywords_df)
     97          sofa beds             offers sofa beds
     98          sofa beds               sofa beds sale
     99          sofa beds               sale sofa beds
-    
-    [100 rows x 2 columns]
-    
 
+    [100 rows x 2 columns]
+
+---
 ## 4. Rename the columns of the DataFrame
 <p>Before we can upload this table of keywords, we will need to give the columns meaningful names. If we inspect the DataFrame we just created above, we can see that the columns are currently named <code>0</code> and <code>1</code>. <code>Ad Group</code> (example: "sofas") and <code>Keyword</code> (example: "sofas buy") are much more appropriate names.</p>
 
@@ -301,8 +317,9 @@ print(keywords_df)
 keywords_df = keywords_df.rename({0:'Ad Group',1:'Keyword'},axis='columns')
 ```
 
+---
 ## 5. Add a campaign column
-<p>Now we need to add some additional information to our DataFrame. 
+<p>Now we need to add some additional information to our DataFrame.
 We need a new column called <code>Campaign</code> for the campaign name. We want campaign names to be descriptive of our group of keywords and products, so let's call this campaign 'SEM_Sofas'.</p>
 
 
@@ -311,6 +328,7 @@ We need a new column called <code>Campaign</code> for the campaign name. We want
 keywords_df = keywords_df.assign(Campaign = 'SEM_Sofas')
 ```
 
+---
 ## 6. Create the match type column
 <p>There are different keyword match types. One is exact match, which is for matching the exact term or are close variations of that exact term. Another match type is broad match, which means ads may show on searches that include misspellings, synonyms, related searches, and other relevant variations.</p>
 <p>Straight from Google's AdWords <a href="https://support.google.com/google-ads/answer/2497836?hl=en">documentation</a>:</p>
@@ -787,7 +805,7 @@ keywords_df
 </div>
 
 
-
+---
 ## 7. Duplicate all the keywords into 'phrase' match
 <p>The great thing about exact match is that it is very specific, and we can control the process very well. The tradeoff, however, is that:  </p>
 <ol>
@@ -1270,7 +1288,7 @@ keywords_df_final
 </div>
 
 
-
+---
 ## 8. Save and summarize!
 <p>To upload our campaign, we need to save it as a CSV file. Then we will be able to import it to AdWords editor or BingAds editor. There is also the option of pasting the data into the editor if we want, but having easy access to the saved data is great so let's save to a CSV file!</p>
 <p>Looking at a summary of our campaign structure is good now that we've wrapped up our keyword work. We can do that by grouping by ad group and criterion type and counting by keyword. This summary shows us that we assigned specific keywords to specific ad groups, which are each part of a campaign. In essence, we are telling Google (or Bing, etc.) that we want any of the words in each ad group to trigger one of the ads in the same ad group. Separately, we will have to create another table for ads, which is a task for another day and would look something like this:</p>
@@ -1344,4 +1362,13 @@ print(summary)
     sofas              Exact             20
                        Phrase            20
     Name: Keyword, dtype: int64
-    
+
+---
+## Further Reading
+- If you're curious about pasting the data into the AdWords or BingAds editor, check out the pandas `to_clipboard` [documentation](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_clipboard.html).
+
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/google-ads-keywords).
+{: .notice}
