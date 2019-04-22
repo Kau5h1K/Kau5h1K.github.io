@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Data Analysis in Baseball using MLBs Statcast data"
+title: "Data Analysis in Baseball using MLB's Statcast data"
 tags: [ Project, python, Data Visualization, Statcast, Aaron Judge,Giancarlo Stanton]
 date: 2019-04-22
 
