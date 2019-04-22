@@ -796,6 +796,7 @@ cb.set_label('Counts in Bin')
 # Should opposing pitchers be wary of Aaron Judge and Giancarlo Stanton
 should_pitchers_be_scared = True
 ```
+
 ---
 ## Further Reading
 If you'd like more Statcast content to digest, this video [(A culmination of special Statcast records in 2017 from MLB's YouTube channel)](https://www.youtube.com/watch?v=tzPKlQXo6hk) and this article [(Major League Baseball's Statcast Can Break Sabermetrics by Emma Baccellieri)](https://deadspin.com/major-league-baseballs-statcast-can-break-sabermetrics-1820987737) are excellent.
