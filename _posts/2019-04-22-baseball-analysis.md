@@ -11,6 +11,7 @@ project: True
 ---
 ## Data
 This project uses a dataset which is available [here](https://github.com/Kau5h1K/baseball-analysis/tree/master/datasets).The dataset used in this project is from [Baseball Savant](https://baseballsavant.mlb.com/about).
+
 ---
 ## 1. The Statcast revolution
 <p><img style="float: left;margin:5px 20px 5px 1px" src="https://s3.amazonaws.com/assets.datacamp.com/production/project_250/img/judge_wide.jpg"></p>
