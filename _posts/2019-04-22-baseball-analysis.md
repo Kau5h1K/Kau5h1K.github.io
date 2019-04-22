@@ -803,5 +803,5 @@ If you'd like more Statcast content to digest, this video [(A culmination of spe
 ---
 ## Dig deeper?
 
-You can find out more about this project at [Github](https://github.com/Kau5h1K/network-of-thrones).
+You can find out more about this project at [Github](https://github.com/Kau5h1K/baseball-analysis).
 {: .notice}
