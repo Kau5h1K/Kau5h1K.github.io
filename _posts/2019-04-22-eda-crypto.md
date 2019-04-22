@@ -136,7 +136,7 @@ ax.set_ylabel(TOP_CAP_YLABEL)
 
 
 
-![svg](eda-crypto_files/eda-crypto_7_1.svg)
+![svg](/assets/img/eda-crypto_files/eda-crypto_7_1.svg)
 
 ---
 ## 5. Making the plot easier to read and more informative
@@ -167,7 +167,7 @@ ax.set_xlabel('')
 
 
 
-![svg](eda-crypto_files/eda-crypto_9_1.svg)
+![svg](/assets/img/eda-crypto_files/eda-crypto_9_1.svg)
 
 ---
 ## 6. What is going on?! Volatility in cryptocurrencies
@@ -228,7 +228,7 @@ fig, ax = top10_subplot(volatility.percent_change_24h,DTITLE)
 ```
 
 
-![svg](eda-crypto_files/eda-crypto_13_0.svg)
+![svg](/assets/img/eda-crypto_files/eda-crypto_13_0.svg)
 
 ---
 ## 8. Ok, those are... interesting. Let's check the weekly Series too.
@@ -248,7 +248,7 @@ fig, ax = top10_subplot(volatility7d,WTITLE)
 ```
 
 
-![svg](eda-crypto_files/eda-crypto_15_0.svg)
+![svg](/assets/img/eda-crypto_files/eda-crypto_15_0.svg)
 
 ---
 ## 9. How small is small?
@@ -305,7 +305,7 @@ plt.plot(values)
     39
 
 
-![svg](eda-crypto_files/eda-crypto_19_1.svg)
+![svg](/assets/img/eda-crypto_files/eda-crypto_19_1.svg)
 
 ---
 ## Dig deeper?
