@@ -1,4 +1,19 @@
+---
+layout: post
+title: "Dr. Semmelweis and the Discovery of Handwashing"
+tags: [ Project, python, pandas, Statistical Thinking in Python, Bootstrap analysis]
+date: 2019-04-22
+excerpt: "In 1847 the Hungarian physician Ignaz Semmelweis makes a breakthrough discovery: He discovers handwashing. Contaminated hands was a major cause of childbed fever and by enforcing handwashing at his hospital he saved hundreds of lives.<br/>
+In this python project, I have reanalyzed the medical data Semmelweis collected."
+comments: True
+project: True
+---
 
+---
+## Data
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/handwash-analysis/tree/master/datasets).
+
+---
 ## 1. Meet Dr. Ignaz Semmelweis
 <p><img style="float: left;margin:5px 20px 5px 1px" src="https://s3.amazonaws.com/assets.datacamp.com/production/project_20/img/ignaz_semmelweis_1860.jpeg"></p>
 <!--
@@ -31,8 +46,8 @@ print(yearly)
     9   1844    2956      68  clinic 2
     10  1845    3241      66  clinic 2
     11  1846    3754     105  clinic 2
-    
 
+---
 ## 2. The alarming number of deaths
 <p>The table above shows the number of women giving birth at the two clinics at the Vienna General Hospital for the years 1841 to 1846. You'll notice that giving birth was very dangerous; an <em>alarming</em> number of women died as the result of childbirth, most of them from childbed fever.</p>
 <p>We see this more clearly if we look at the <em>proportion of deaths</em> out of the number of women giving birth. Let's zoom in on the proportion of deaths at Clinic 1.</p>
@@ -62,8 +77,8 @@ print(yearly)
     9   1844    2956      68  clinic 2           0.023004
     10  1845    3241      66  clinic 2           0.020364
     11  1846    3754     105  clinic 2           0.027970
-    
 
+---
 ## 3. Death at the clinics
 <p>If we now plot the proportion of deaths at both clinic 1 and clinic 2  we'll see a curious pattern...</p>
 
@@ -88,7 +103,7 @@ ax.set_ylabel("Proportion deaths")
 
 ![png](/assets/img/handwash-analysis_files/handwash-analysis_5_1.png)
 
-
+---
 ## 4. The handwashing begins
 <p>Why is the proportion of deaths constantly so much higher in Clinic 1? Semmelweis saw the same pattern and was puzzled and distressed. The only difference between the clinics was that many medical students served at Clinic 1, while mostly midwife students served at Clinic 2. While the midwives only tended to the women giving birth, the medical students also spent time in the autopsy rooms examining corpses. </p>
 <p>Semmelweis started to suspect that something on the corpses, spread from the hands of the medical students, caused childbed fever. So in a desperate attempt to stop the high mortality rates, he decreed: <em>Wash your hands!</em> This was an unorthodox and controversial request, nobody in Vienna knew about bacteria at this point in time. </p>
@@ -111,8 +126,8 @@ print(monthly.head())
     2 1841-03-01     277      12           0.043321
     3 1841-04-01     255       4           0.015686
     4 1841-05-01     255       2           0.007843
-    
 
+---
 ## 5. The effect of handwashing
 <p>With the data loaded we can now look at the proportion of deaths over time. In the plot below we haven't marked where obligatory handwashing started, but it reduced the proportion of deaths to such a degree that you should be able to spot it!</p>
 
@@ -133,7 +148,7 @@ ax.set_ylabel('Proportion deaths')
 
 ![png](/assets/img/handwash-analysis_files/handwash-analysis_9_1.png)
 
-
+---
 ## 6. The effect of handwashing highlighted
 <p>Starting from the summer of 1847 the proportion of deaths is drastically reduced and, yes, this was when Semmelweis made handwashing obligatory. </p>
 <p>The effect of handwashing is made even more clear if we highlight this in the graph.</p>
@@ -164,7 +179,7 @@ ax.set_ylabel('Proportion deaths')
 
 ![png](/assets/img/handwash-analysis_files/handwash-analysis_11_1.png)
 
-
+---
 ## 7. More handwashing, fewer deaths?
 <p>Again, the graph shows that handwashing had a huge effect. How much did it reduce the monthly proportion of deaths on average?</p>
 
@@ -183,7 +198,7 @@ mean_diff
     -0.08395660751183336
 
 
-
+---
 ## 8. A Bootstrap analysis of Semmelweis handwashing data
 <p>It reduced the proportion of deaths by around 8 percentage points! From 10% on average to just 2% (which is still a high number by modern standards). </p>
 <p>To get a feeling for the uncertainty around how much handwashing reduces mortalities we could look at a confidence interval (here calculated using the bootstrap method).</p>
@@ -197,7 +212,7 @@ for i in range(3000):
     boot_after = after_proportion.sample(frac=1,replace=True)
     boot_mean_diff.append( boot_after.mean()-boot_before.mean())
 
-# Calculating a 95% confidence interval from boot_mean_diff 
+# Calculating a 95% confidence interval from boot_mean_diff
 confidence_interval = pd.Series(boot_mean_diff).quantile([0.025,0.975])
 confidence_interval
 
@@ -211,7 +226,7 @@ confidence_interval
     dtype: float64
 
 
-
+---
 ## 9. The fate of Dr. Semmelweis
 <p>So handwashing reduced the proportion of deaths by between 6.7 and 10 percentage points, according to a 95% confidence interval. All in all, it would seem that Semmelweis had solid evidence that handwashing was a simple but highly effective procedure that could save many lives.</p>
 <p>The tragedy is that, despite the evidence, Semmelweis' theory — that childbed fever was caused by some "substance" (what we today know as <em>bacteria</em>) from autopsy room corpses — was ridiculed by contemporary scientists. The medical community largely rejected his discovery and in 1849 he was forced to leave the Vienna General Hospital for good.</p>
@@ -222,3 +237,9 @@ confidence_interval
 # The data Semmelweis collected points to that:
 doctors_should_wash_their_hands = False
 ```
+
+---
+## Dig deeper?
+
+You can find out more about this project at [Github](https://github.com/Kau5h1K/handwash-analysis).
+{: .notice}
