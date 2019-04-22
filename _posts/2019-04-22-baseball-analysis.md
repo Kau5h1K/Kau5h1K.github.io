@@ -7,6 +7,7 @@ excerpt: "There's a new era of data analysis in baseball. Using a new technology
 comments: True
 project: True
 ---
+
 ---
 ## Data
 This project uses a dataset which is available [here](https://github.com/Kau5h1K/baseball-analysis/tree/master/datasets).The dataset used in this project is from [Baseball Savant](https://baseballsavant.mlb.com/about).
