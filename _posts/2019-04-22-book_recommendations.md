@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Filter passwords using NIST guidelines"
-tags: [ Project, python, pandas, Cleaning Data, Tensorflow, Natural Language Processing, NLP, gensim, pickle, token, tokenize, stemming, lemmatization, regex, hierarchy, cluster, dendrogram]
+title: "Charles Darwin's book similarities and recommendations"
+tags: [ Project, python, pandas, Cleaning Data, Tensorflow, Natural Language Processing, NLP, gensim, pickle, token, tokenize, stemming, lemmatization, regex, hierarchy, cluster, dendrogram, charles darwin]
 date: 2019-04-22
 excerpt: "Recommendation systems are at the heart of many products such as Netflix or Amazon. They generally rely on metadata (e.g., the actors or director of a movie) or on user tastes (e.g., the movies you liked before) to determine which you are most likely to enjoy. But when you are working with text-heavy datasets, you have access to a much richer resource, the whole text!<br/>
 In this Project, I managed to build the basic book recommendation system based on their content. I used Charles Darwin's bibliography to find out which books might interest you!"
