@@ -10,7 +10,7 @@ project: True
 
 ---
 ## Data
-This project uses a dataset which is available [here]https://github.com/Kau5h1K/moby-dick-nlp-analysis/tree/master/datasets).
+This project uses a dataset which is available [here](https://github.com/Kau5h1K/moby-dick-nlp-analysis/tree/master/datasets).
 
 ---
 ## 1. Tools for text processing
