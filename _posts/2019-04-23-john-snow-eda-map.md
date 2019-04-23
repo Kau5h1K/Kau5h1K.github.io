@@ -3,7 +3,8 @@ layout: post
 title: "You know Everything John Snow"
 tags: [ Project, python, pandas, Cleaning Data, Data visualization, bokeh, folium,  glyphs]
 date: 2019-04-23
-excerpt: "Recreating John Snow's famous map of the 1854 cholera outbreak in London."
+excerpt: "In 1854, Dr. John Snow (no, not the Game of Thrones's character) used a pre-computer method of spatial analysis by mapping patterns and occurrences of cholera outbreaks in Soho, London. He mapped the deaths in the neighbourhood and determined that a vast majority occurred around one particular water well and that those that died used that well. It is not only one of the earliest uses of data visualization, but by solving this problem, he also founded spatial analysis and modern epidemiology.<br/>
+In this project, I have decided to recreate John Snow's famous map of the 1854 cholera outbreak in London."
 comments: True
 project: True
 ---
@@ -20,7 +21,7 @@ Since Github scrubs rendering javascript and interactive plots (such as bokeh, p
 ---
 ## 1. Dr. John Snow
 <p><img style="float: left;margin:5px 20px 5px 1px" src="https://assets.datacamp.com/production/project_132/img/johnsnow_final1.png"></p>
-<p>Dr. John Snow (1813-1858) (no, not the Game of Thrones's character) was a famous British physician and is widely recognized as a legendary figure in the history of public health and a leading pioneer in the development of anesthesia. Some even say one of the greatest physicians of all time.</p>
+<p>Dr. John Snow (1813-1858) was a famous British physician and is widely recognized as a legendary figure in the history of public health and a leading pioneer in the development of anesthesia. Some even say one of the greatest physicians of all time.</p>
 <p>As a leading advocate of both anesthesia and hygienic practices in medicine, he not only experimented with ether and chloroform but also designed a mask and method how to administer it. He personally administered chloroform to Queen Victoria during the births of her eighth and ninth children, in 1853 and 1857, which assured a growing public acceptance of the use of anesthetics during childbirth.</p>
 <p>But, as we will show later, not all his life was just a success. John Snow is now also recognized as one of the founders of modern epidemiology <em>(some also consider him as the founder of data visualization, spatial analysis, data science in general, and many other related fields)</em> for his scientific and pretty modern data approach in identifying the source of a cholera outbreak in Soho, London in 1854, but it wasn't always like this. In fact, for a long time, he was simply ignored by the scientific community and currently is very often mythified. </p>
 <p>In this notebook, we're not only going to rediscover his "data story", but reanalyze the data that he collected in 1854 and recreate his famous map (also called The Ghost Map).</p>
