@@ -4,11 +4,26 @@ title: "Search"
 permalink: /search/
 comments: false
 ---
+<!--
 <div id="search-container">
 <input type="text" id="search-input" placeholder="Search posts and projects...">
 <ul id="results-container"></ul>
 </div>
-
+-->
+<div id="cover">
+  <form method="get" action="">
+    <div class="tb">
+      <div class="td"><input type="text" id="search-input" placeholder="Search" required></div>
+       <ul id="results-container"></ul>
+      <div class="td" id="s-cover">
+        <button type="submit">
+          <div id="s-circle"></div>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
 <!-- Script pointing to search-script.js-->
 <script src="{{ site.baseurl }}/js/search-script.js" type="text/javascript"></script>
 <!-- <script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script> -->
