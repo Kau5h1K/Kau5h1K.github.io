@@ -163,9 +163,6 @@ for word in words:
 words_ns[:10]
 ```
 
-
-
-
     ['moby',
      'dick',
      'whale',
@@ -210,7 +207,7 @@ freqdist.plot(25)
 
 ```python
 # What's the most common word in Moby Dick?
-most_common_word = 'horse'
+most_common_word = 'whale'
 ```
 
 
