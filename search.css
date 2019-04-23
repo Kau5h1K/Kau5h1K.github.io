@@ -1,8 +1,8 @@
 .search-input {
   width: 100%;
-  border: 3px solid #283643;
-  padding: 5px;
-  height: 20px;
+  border: 10px solid #283643;
+  padding: 10px;
+  height: 30px;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #668DAC;
