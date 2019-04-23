@@ -1,6 +1,4 @@
----
-layout: compress
----
+
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
@@ -14,6 +12,7 @@ layout: compress
     <!-- Header -->
     <header class="header flex" role="banner">
         <div class="container animated fadeIn">
+          <div class="cursor"></div>
             <div class="row">
                     <a href="{{ site.url }}/home">
                         <img src="{{ site.url }}/assets/img/logo.png" class="img-circle zoombtn animated rotateIn">
@@ -63,6 +62,21 @@ layout: compress
 
     </header>
     {% include scripts.html %}
+    <script>
+      const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 9)+"px; left: "+(e.pageX - 10)+"px;")
+})
+
+document.addEventListener('click', () => {
+    cursor.classList.add("expand");
+
+    setTimeout(() => {
+        cursor.classList.remove("expand");
+    }, 500)
+})
+      </script>
 
 </body>
 </html>
