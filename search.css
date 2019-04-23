@@ -1,10 +1,5 @@
 .search {
   padding: 30px;
-
-
-
-
-
 }
 .search-input {
   width: 100%;
@@ -15,6 +10,11 @@
   outline: none;
   color: #668DAC;
   background-color: #283643;
+}
+
+.search-input:focus {
+   background-color: lightblue;
+
 }
 
 .searchTerm:focus{
