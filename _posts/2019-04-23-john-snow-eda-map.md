@@ -14,7 +14,7 @@ This project uses a dataset which is available [here](https://github.com/Kau5h1K
 
 ---
 ### NOTE
-Since Github scrubs rendering javascript and interactive plots (such as bokeh, plotly,folium), [here's a rendered version](https://nbviewer.jupyter.org/github/Kau5h1K/john-snow-eda-map/blob/master/john-snow-eda-map.ipynb) by Jupyter nbviewer.   
+Since Github scrubs rendering javascript and interactive plots (such as bokeh, plotly, folium), [here's a rendered version](https://nbviewer.jupyter.org/github/Kau5h1K/john-snow-eda-map/blob/master/john-snow-eda-map.ipynb) by Jupyter nbviewer.   
 {: .notice}
 
 ---
