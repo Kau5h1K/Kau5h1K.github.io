@@ -1,6 +1,6 @@
 body {
 
-    //cursor: none;
+    cursor: url(abc.cur),auto;
 }
 
 .cursor {
