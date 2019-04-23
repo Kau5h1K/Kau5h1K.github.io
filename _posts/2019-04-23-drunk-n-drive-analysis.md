@@ -3,7 +3,7 @@ layout: post
 title: "Drunk Analysis"
 tags: [ Project, python, pandas, Cleaning Data, Manipulating DataFrames]
 date: 2019-04-23
-excerpt: "Flexing my pandas muscles on breath alcohol test data from Ames, Iowa, USA."
+excerpt: "Flexing my pandas muscles on breath alcohol test data from Ames, Iowa, USA. I have grouped, summarized, and visualized data on breath alcohol tests in Ames, Iowa, (home of Iowa State University) from 2013-2017. Some questions that were answered include, \"What is the highest recorded value?\" and \"When do breath alcohol tests occur most?\""
 comments: True
 project: True
 ---
