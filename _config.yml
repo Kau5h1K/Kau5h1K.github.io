@@ -62,11 +62,6 @@ pinterest:         Kaush1k
 #keybase:           username
 #xmpp:              username@server.com
 #hackernews:        username
-tipue_search:
-  include:
-    pages: true
-  exclude:
-    files: [index.html, search.html]
 # Gems
 plugins:
   - jekyll-mentions
