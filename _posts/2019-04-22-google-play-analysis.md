@@ -15,7 +15,7 @@ This project uses a dataset which is available [here](https://github.com/Kau5h1K
 
 ---
 ### NOTE
-Since Github scrubs rendering javascript and interactive plots (such as bokeh, plotly), [here's a rendered version](https://nbviewer.jupyter.org/github/Kau5h1K/google-play-analysis/blob/master/google-play-analysis.ipynb) by Jupyter nbviewer.   
+Since Github scrubs rendering javascript and interactive plots (such as bokeh, plotly,folium), [here's a rendered version](https://nbviewer.jupyter.org/github/Kau5h1K/google-play-analysis/blob/master/google-play-analysis.ipynb) by Jupyter nbviewer.   
 {: .notice}
 
 ---
