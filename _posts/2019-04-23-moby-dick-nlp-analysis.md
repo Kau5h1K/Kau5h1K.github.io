@@ -141,9 +141,6 @@ sw[:8]
     [nltk_data]   Package stopwords is already up-to-date!
 
 
-
-
-
     ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves']
 
 
