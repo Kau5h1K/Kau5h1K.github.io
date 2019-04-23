@@ -2,19 +2,24 @@
   padding: 30px;
 }
 .search-input {
-  width: 100%;
-  border: 30px solid #668DAC;
+  width: 50%;
+  position: center;
+  border: 30px solid #658CAB;
   padding: 30px;
   height: 33px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #668DAC;
+  color: #658CAB;
   background-color: #283643;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
 
 .search-input:focus {
-   background-color: lightblue;
-
+   background-color: #658CAB;
+   border: 30px solid #283643;
+   color: #283643;
+   width: 100%;
 }
 
 .searchTerm:focus{
