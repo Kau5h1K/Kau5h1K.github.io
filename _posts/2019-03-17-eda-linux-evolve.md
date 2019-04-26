@@ -19,14 +19,14 @@ This project uses a dataset which is available [here](https://github.com/Kau5h1K
 <p><a href="https://commons.wikimedia.org/wiki/File:Tux.svg">
 <img style="float: right;margin:5px 20px 5px 1px" width="150px" src="https://s3.amazonaws.com/assets.datacamp.com/production/project_111/img/tux.png" alt="Tux - the Linux mascot">
 </a></p>
-<p>In this notebook, we will analyze the evolution of a very famous open-source project &ndash; the Linux kernel. The Linux kernel is the heart of some Linux distributions like Debian, Ubuntu or CentOS. </p>
+<p>In this notebook, I will analyze the evolution of a very famous open-source project &ndash; the Linux kernel. The Linux kernel is the heart of some Linux distributions like Debian, Ubuntu or CentOS. </p>
 <p>We get some first insights into the work of the development efforts by </p>
 <ul>
 <li>identifying the TOP 10 contributors and</li>
 <li>visualizing the commits over the years.</li>
 </ul>
 <p>Linus Torvalds, the (spoiler alert!) main contributor to the Linux kernel (and also the creator of Git), created a <a href="https://github.com/torvalds/linux/">mirror of the Linux repository on GitHub</a>. It contains the complete history of kernel development for the last 13 years.</p>
-<p>For our analysis, we will use a Git log file with the following content:</p>
+<p>For my analysis, I will use a Git log file with the following content:</p>
 
 
 ```python
@@ -121,7 +121,7 @@ top_10_authors
 
 ---
 ## 5. Wrangling the data
-<p>For our analysis, we want to visualize the contributions over time. For this, we use the information in the <code>timestamp</code> column to create a time series-based column.</p>
+<p>For my analysis, I want to visualize the contributions over time. For this, I use the information in the <code>timestamp</code> column to create a time series-based column.</p>
 
 
 ```python
@@ -221,7 +221,7 @@ corrected_log.describe()
 
 ---
 ## 7. Grouping commits per year
-<p>To find out how the development activity has increased over time, we'll group the commits by year and count them up.</p>
+<p>To find out how the development activity has increased over time, I'll group the commits by year and count them up.</p>
 
 
 ```python
@@ -297,7 +297,7 @@ commits_per_year.head()
 
 ---
 ## 8. Visualizing the history of Linux
-<p>Finally, we'll make a plot out of these counts to better see how the development effort on Linux has increased over the the last few years. </p>
+<p>Finally, I'll make a plot out of these counts to better see how the development effort on Linux has increased over the the last few years. </p>
 
 
 ```python

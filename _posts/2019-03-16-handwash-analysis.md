@@ -129,7 +129,7 @@ print(monthly.head())
 
 ---
 ## 5. The effect of handwashing
-<p>With the data loaded we can now look at the proportion of deaths over time. In the plot below we haven't marked where obligatory handwashing started, but it reduced the proportion of deaths to such a degree that you should be able to spot it!</p>
+<p>With the data loaded we can now look at the proportion of deaths over time. In the plot below I haven't marked where obligatory handwashing started, but it reduced the proportion of deaths to such a degree that one should be able to spot it!</p>
 
 
 ```python
@@ -151,7 +151,7 @@ ax.set_ylabel('Proportion deaths')
 ---
 ## 6. The effect of handwashing highlighted
 <p>Starting from the summer of 1847 the proportion of deaths is drastically reduced and, yes, this was when Semmelweis made handwashing obligatory. </p>
-<p>The effect of handwashing is made even more clear if we highlight this in the graph.</p>
+<p>The effect of handwashing is made even more clear if I highlight this in the graph.</p>
 
 
 ```python

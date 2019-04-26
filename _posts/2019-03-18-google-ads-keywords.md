@@ -93,7 +93,7 @@ print(words)
 ---
 ## 2. Combine the words with the product names
 <p>Imagining all the possible combinations of keywords can be stressful! But not for us, because we are keyword ninjas! We know how to translate campaign briefs into Python data structures and can imagine the resulting DataFrames that we need to create.</p>
-<p>Now that we have brainstormed the words that work well with the brief that we received, it is now time to combine them with the product names to generate meaningful search keywords. We want to combine every word with every product once before, and once after, as seen in the example above.</p>
+<p>Now that I have brainstormed the words that work well with the brief that I received, it is now time to combine them with the product names to generate meaningful search keywords. I want to combine every word with every product once before, and once after, as seen in the example above.</p>
 <p>As a quick reminder, for the product 'recliners' and the words 'buy' and 'price' for example, we would want to generate the following combinations: </p>
 <p>buy recliners<br>
 recliners buy<br>
@@ -225,7 +225,7 @@ pprint(keywords_list)
 
 ---
 ## 3. Convert the list of lists into a DataFrame
-<p>Now we want to convert this list of lists into a DataFrame so we can easily manipulate it and manage the final output.</p>
+<p>Now I want to convert this list of lists into a DataFrame so I can easily manipulate it and manage the final output.</p>
 
 
 ```python
@@ -305,7 +305,7 @@ print(keywords_df)
 
 ---
 ## 4. Rename the columns of the DataFrame
-<p>Before we can upload this table of keywords, we will need to give the columns meaningful names. If we inspect the DataFrame we just created above, we can see that the columns are currently named <code>0</code> and <code>1</code>. <code>Ad Group</code> (example: "sofas") and <code>Keyword</code> (example: "sofas buy") are much more appropriate names.</p>
+<p>Before I can upload this table of keywords, I will need to give the columns meaningful names. If we inspect the DataFrame I just created above, we can see that the columns are currently named <code>0</code> and <code>1</code>. <code>Ad Group</code> (example: "sofas") and <code>Keyword</code> (example: "sofas buy") are much more appropriate names.</p>
 
 
 ```python
@@ -315,7 +315,7 @@ keywords_df = keywords_df.rename({0:'Ad Group',1:'Keyword'},axis='columns')
 
 ---
 ## 5. Add a campaign column
-<p>Now we need to add some additional information to our DataFrame.
+<p>Now I need to add some additional information to our DataFrame.
 We need a new column called <code>Campaign</code> for the campaign name. We want campaign names to be descriptive of our group of keywords and products, so let's call this campaign 'SEM_Sofas'.</p>
 
 
@@ -809,7 +809,7 @@ keywords_df
 <li>We can't possibly think of all the ways in which people search, and so, we are probably missing out on some high-quality keywords.</li>
 </ol>
 <p>So it's good to use another match called <em>phrase match</em> as a discovery mechanism to allow our ads to be triggered by keywords that include our exact match keywords, together with anything before (or after) them.</p>
-<p>Later on, when we launch the campaign, we can explore with modified broad match, broad match, and negative match types, for better visibility and control of our campaigns.</p>
+<p>Later on, when I launch the campaign, we can explore with modified broad match, broad match, and negative match types, for better visibility and control of our campaigns.</p>
 
 
 ```python
@@ -1286,8 +1286,8 @@ keywords_df_final
 
 ---
 ## 8. Save and summarize!
-<p>To upload our campaign, we need to save it as a CSV file. Then we will be able to import it to AdWords editor or BingAds editor. There is also the option of pasting the data into the editor if we want, but having easy access to the saved data is great so let's save to a CSV file!</p>
-<p>Looking at a summary of our campaign structure is good now that we've wrapped up our keyword work. We can do that by grouping by ad group and criterion type and counting by keyword. This summary shows us that we assigned specific keywords to specific ad groups, which are each part of a campaign. In essence, we are telling Google (or Bing, etc.) that we want any of the words in each ad group to trigger one of the ads in the same ad group. Separately, we will have to create another table for ads, which is a task for another day and would look something like this:</p>
+<p>To upload our campaign, I need to save it as a CSV file. Then I will be able to import it to AdWords editor or BingAds editor. There is also the option of pasting the data into the editor if we want, but having easy access to the saved data is great so let's save to a CSV file!</p>
+<p>Looking at a summary of my campaign structure is good now that I've wrapped up our keyword work. I can do that by grouping by ad group and criterion type and counting by keyword. This summary shows us that we assigned specific keywords to specific ad groups, which are each part of a campaign. In essence, we are telling Google (or Bing, etc.) that we want any of the words in each ad group to trigger one of the ads in the same ad group. Separately, we will have to create another table for ads, which is a task for another day and would look something like this:</p>
 <table>
 <thead>
 <tr>
@@ -1306,7 +1306,7 @@ keywords_df_final
 <td>Looking for Quality Sofas?</td>
 <td>Explore Our Massive Collection</td>
 <td>30-day Returns With Free Delivery Within the US. Start Shopping Now</td>
-<td>DataCampSofas.com/sofas</td>
+<td>KaushikSofas.com/sofas</td>
 </tr>
 <tr>
 <td>SEM_Sofas</td>
@@ -1314,7 +1314,7 @@ keywords_df_final
 <td>Looking for Affordable Sofas?</td>
 <td>Check Out Our Weekly Offers</td>
 <td>30-day Returns With Free Delivery Within the US. Start Shopping Now</td>
-<td>DataCampSofas.com/sofas</td>
+<td>KaushikSofas.com/sofas</td>
 </tr>
 <tr>
 <td>SEM_Sofas</td>
@@ -1322,7 +1322,7 @@ keywords_df_final
 <td>Looking for Quality Recliners?</td>
 <td>Explore Our Massive Collection</td>
 <td>30-day Returns With Free Delivery Within the US. Start Shopping Now</td>
-<td>DataCampSofas.com/recliners</td>
+<td>KaushikSofas.com/recliners</td>
 </tr>
 <tr>
 <td>SEM_Sofas</td>
@@ -1330,7 +1330,7 @@ keywords_df_final
 <td>Need Affordable Recliners?</td>
 <td>Check Out Our Weekly Offers</td>
 <td>30-day Returns With Free Delivery Within the US. Start Shopping Now</td>
-<td>DataCampSofas.com/recliners</td>
+<td>KaushikSofas.com/recliners</td>
 </tr>
 </tbody>
 </table>
