@@ -23,8 +23,8 @@ Since Github scrubs rendering javascript and interactive plots (such as bokeh, p
 <p><img style="float: left;margin:5px 20px 5px 1px" src="https://assets.datacamp.com/production/project_132/img/johnsnow_final1.png"></p>
 <p>Dr. John Snow (1813-1858) was a famous British physician and is widely recognized as a legendary figure in the history of public health and a leading pioneer in the development of anesthesia. Some even say one of the greatest physicians of all time.</p>
 <p>As a leading advocate of both anesthesia and hygienic practices in medicine, he not only experimented with ether and chloroform but also designed a mask and method how to administer it. He personally administered chloroform to Queen Victoria during the births of her eighth and ninth children, in 1853 and 1857, which assured a growing public acceptance of the use of anesthetics during childbirth.</p>
-<p>But, as we will show later, not all his life was just a success. John Snow is now also recognized as one of the founders of modern epidemiology <em>(some also consider him as the founder of data visualization, spatial analysis, data science in general, and many other related fields)</em> for his scientific and pretty modern data approach in identifying the source of a cholera outbreak in Soho, London in 1854, but it wasn't always like this. In fact, for a long time, he was simply ignored by the scientific community and currently is very often mythified. </p>
-<p>In this notebook, we're not only going to rediscover his "data story", but reanalyze the data that he collected in 1854 and recreate his famous map (also called The Ghost Map).</p>
+<p>But, as I will show later, not all his life was just a success. John Snow is now also recognized as one of the founders of modern epidemiology <em>(some also consider him as the founder of data visualization, spatial analysis, data science in general, and many other related fields)</em> for his scientific and pretty modern data approach in identifying the source of a cholera outbreak in Soho, London in 1854, but it wasn't always like this. In fact, for a long time, he was simply ignored by the scientific community and currently is very often mythified. </p>
+<p>In this notebook, I'm not only going to rediscover his "data story", but reanalyze the data that he collected in 1854 and recreate his famous map (also called The Ghost Map).</p>
 
 
 ```python
@@ -52,7 +52,7 @@ print(deaths.head())
 <p><img style="float: left;margin:5px 20px 5px 1px" src="https://assets.datacamp.com/production/project_132/img/johnsnow_cholera1.jpg"></p>
 <p>Prior to John Snow's discovery cholera was a regular visitor to London’s overcrowded and unsanitary streets. During the time of the third cholera outbreak, it was one of the most studied subjects (between years 1839-1856 over 700 studies and essays were published in London alone) and nearly all of the authors believed the outbreaks were due to miasma or "bad air". </p>
 <p>It was John Snow's pioneering work with anesthesia and gases that made him doubt the miasma model of the disease. Originally he formulated and published his theory that cholera is spread by water or food  in an essay On the Mode of Communication of Cholera (before the outbreak in 1849). The essay received negative reviews in the Lancet and the London Medical Gazette. </p>
-<p>We know now that he was right, but Dr. Snow's dilemma was how to prove it? His first step to getting there was checking the data. Our dataset has 489 rows of data in 3 columns but to work with dataset more easily we will first make few changes. </p>
+<p>We know now that he was right, but Dr. Snow's dilemma was how to prove it? His first step to getting there was checking the data. Our dataset has 489 rows of data in 3 columns but to work with dataset more easily I will first make few changes. </p>
 
 
 ```python
@@ -137,7 +137,7 @@ map
 <p>After marking the deaths on the map, what John Snow saw was not a random pattern (we saw this on our recreation of The Ghost Map too). The majority of the deaths were concentrated at the corner of Broad Street (now Broadwick Street) and Cambridge Street (now Lexington Street). A cluster of deaths around the junction of these streets was the epicenter of the outbreak, but what was there? Yes, a water pump.</p>
 <p>John Snow at the time already had a developed theory that cholera spreads through water, so to test this he marked on the map also the locations of the water pumps nearby. And here it was, the whole picture.</p>
 <p>By combining the location of deaths related to cholera with locations of the water pumps, Snow was able to show that the majority were clustered around one particular public water pump in Broad Street, Soho. Finally, he had the proof that he needed.</p>
-<p>We will now do the same and add the locations of the pumps to our recreation of The Ghost Map.</p>
+<p>I will now do the same and add the locations of the pumps to my recreation of The Ghost Map.</p>
 
 
 ```python
@@ -165,7 +165,7 @@ map1
 <p><img style="float: left;margin:5px 20px 5px 1px" src="https://assets.datacamp.com/production/project_132/img/johnsnow_map1.jpg"></p>
 <p>So, John Snow finally had his proof that there was a connection between deaths as a consequence of the cholera outbreak and the public water pump that was probably contaminated. But he didn't just stop there and investigated further.</p>
 <p>He was looking for anomalies now (we would now say "outliers in data") and found two in fact where there were no deaths. First was brewery right on the Broad Street, so he went there and learned that they drank mostly beer (in other words not the water from the local pump, which confirms his theory that the pump is the source of the outbreak). The second building without any deaths was workhouse near Poland street where he learned that their source of water was not the pump on the Broad Street (confirmation again). The locations of both buildings are visualized also on the map on the left.</p>
-<p>He was now sure, and although officials did not trust him nor his theory they removed the handle to the pump next day, 8th of September 1854. John Snow later collected and published in his famous book also all the data about deaths in chronological order, before and after the peak of the outbreak and we will now analyze and compare the effect when the handle was removed.</p>
+<p>He was now sure, and although officials did not trust him nor his theory they removed the handle to the pump next day, 8th of September 1854. John Snow later collected and published in his famous book also all the data about deaths in chronological order, before and after the peak of the outbreak and I will now analyze and compare the effect when the handle was removed.</p>
 
 
 ```python

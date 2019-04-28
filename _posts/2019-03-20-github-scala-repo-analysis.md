@@ -17,8 +17,8 @@ This project uses a dataset which is available [here](https://github.com/Kau5h1K
 ## 1. Scala's real-world project repository data
 <p>With almost 30k commits and a history spanning over ten years, Scala is a mature programming language. It is a general-purpose programming language that has recently become another prominent language for data scientists.</p>
 <p>Scala is also an open source project. Open source projects have the advantage that their entire development histories -- who made changes, what was changed, code reviews, etc. -- publicly available. </p>
-<p>We're going to read in, clean up, and visualize the real world project repository of Scala that spans data from a version control system (Git) as well as a project hosting site (GitHub). We will find out who has had the most influence on its development and who are the experts.</p>
-<p>The dataset we will use, which has been previously mined and extracted directly from GitHub, is comprised of two files:</p>
+<p>I'm going to read in, clean up, and visualize the real world project repository of Scala that spans data from a version control system (Git) as well as a project hosting site (GitHub). I will find out who has had the most influence on its development and who are the experts.</p>
+<p>The dataset I will use, which has been previously mined and extracted directly from GitHub, is comprised of two files:</p>
 <ol>
 <li><code>pulls.csv</code> contains the basic information about the pull requests.</li>
 <li><code>pull_files.csv</code> contains the files that were modified by each pull request.</li>
@@ -919,8 +919,8 @@ data
 ---
 ## 4. Is the project still actively maintained?
 <p>The activity in an open source project is not very consistent. Some projects might be active for many years after the initial release, while others can slowly taper out into oblivion. Before committing to contributing to a project, it is important to understand the state of the project. Is development going steadily, or is there a drop? Has the project been abandoned altogether?</p>
-<p>The data used in this project was collected in January of 2018. We are interested in the evolution of the number of contributions up to that date.</p>
-<p>For Scala, we will do this by plotting a chart of the project's activity. We will calculate the number of pull requests submitted each (calendar) month during the project's lifetime. We will then plot these numbers to see the trend of contributions.</p>
+<p>The data used in this project was collected in January of 2018. I am interested in the evolution of the number of contributions up to that date.</p>
+<p>For Scala, I will do this by plotting a chart of the project's activity. I will calculate the number of pull requests submitted each (calendar) month during the project's lifetime. I will then plot these numbers to see the trend of contributions.</p>
 
 
 ```python
@@ -949,7 +949,7 @@ counts.plot.bar()
 ---
 ## 5. Is there camaraderie in the project?
 <p>The organizational structure varies from one project to another, and it can influence your success as a contributor. A project that has a very small community might not be the best one to start working on. The small community might indicate a high barrier of entry. This can be caused by several factors, including a community that is reluctant to accept pull requests from "outsiders," that the code base is hard to work with, etc. However, a large community can serve as an indicator that the project is regularly accepting pull requests from new contributors. Such a project would be a good place to start.</p>
-<p>In order to evaluate the dynamics of the community, we will plot a histogram of the number of pull requests submitted by each user. A distribution that shows that there are few people that only contribute a small number of pull requests can be used as in indicator that the project is not welcoming of new contributors. </p>
+<p>In order to evaluate the dynamics of the community, I will plot a histogram of the number of pull requests submitted by each user. A distribution that shows that there are few people that only contribute a small number of pull requests can be used as in indicator that the project is not welcoming of new contributors. </p>
 
 
 ```python
@@ -975,7 +975,7 @@ by_user.plot.hist()
 
 ---
 ## 6. What files were changed in the last ten pull requests?
-<p>Choosing the right place to make a contribution is as important as choosing the project to contribute to. Some parts of the code might be stable, some might be dead. Contributing there might not have the most impact. Therefore it is important to understand the parts of the system that have been recently changed. This allows us to pinpoint the "hot" areas of the code where most of the activity is happening. Focusing on those parts might not the most effective use of our times.</p>
+<p>Choosing the right place to make a contribution is as important as choosing the project to contribute to. Some parts of the code might be stable, some might be dead. Contributing there might not have the most impact. Therefore it is important to understand the parts of the system that have been recently changed. This allows us to pinpoint the "hot" areas of the code where most of the activity is happening. Focusing on those parts might not be the most effective use of our times.</p>
 
 
 ```python
@@ -1033,7 +1033,7 @@ files
 
 ---
 ## 7. Who made the most pull requests to a given file?
-<p>When contributing to a project, we might need some guidance. We might find ourselves needing some information regarding the codebase. It is important direct any questions to the right person. Contributors to open source projects generally have other day jobs, so their time is limited. It is important to address our questions to the right people. One way to identify the right target for our inquiries is by using their contribution history.</p>
+<p>When contributing to a project, we might need some guidance. We might find ourselves needing some information regarding the codebase. It is important to direct any questions to the right person. Contributors to open source projects generally have other day jobs, so their time is limited. It is important to address our questions to the right people. One way to identify the right target for our inquiries is by using their contribution history.</p>
 <p>We identified <code>src/compiler/scala/reflect/reify/phases/Calculate.scala</code> as being recently changed. We are interested in the top 3 developers who changed that file. Those developers are the ones most likely to have the best understanding of the code.</p>
 
 
