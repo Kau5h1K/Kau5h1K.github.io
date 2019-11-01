@@ -4,7 +4,7 @@ title: "Trending Machine Learning Topics"
 tags: [ Project, python, pandas, Natural Language Processing, NLP, WordCloud, regex, LDA, CountVectorizer, Latent Dirichlet Allocation]
 date: 2019-04-15
 excerpt: "Neural Information Processing Systems (NIPS) is one of the top machine learning conferences in the world where groundbreaking work is published. <br/>
-In this Project, I have analyzed a large collection of NIPS research papers from the past decade to discover the latest trends in machine learning. The techniques used here to handle large amounts of data can be applied to other text datasets as well."
+In this Project, I seek to analyze a large collection of NIPS research papers from the past decade to discover the latest trends in machine learning. The techniques I use here to handle large amounts of data can be applied to other text datasets as well."
 comments: True
 project: True
 ---

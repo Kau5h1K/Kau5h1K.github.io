@@ -4,7 +4,7 @@ title: "Exploring the evolution of Linux"
 tags: [ Project, python, pandas, Cleaning Data, Timeseries, Data Visualization]
 date: 2019-03-17
 excerpt: "Version control repositories like CVS, Subversion or Git store rich evolution information about a software project.<br/>
-In this project, I have read in, cleaned up and visualized a real world Git repository dataset of the Linux kernel. With almost 700k commits and thousands of contributors, there are some little data cleaning and wrangling challenges that I've encountered in addition to gaining insights about the development activities over the last 13 years."
+In this project, I seek to read in, clean up and visualize a real world Git repository dataset of the Linux kernel. With almost 700k commits and thousands of contributors, there could be some little data cleaning and wrangling challenges that I may encounter in addition to gaining insights about the development activities over the last 13 years."
 comments: True
 project: True
 ---

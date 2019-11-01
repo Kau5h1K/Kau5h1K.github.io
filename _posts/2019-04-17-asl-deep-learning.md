@@ -4,7 +4,7 @@ title: "American Sign Language recognition with Deep Learning"
 tags: [ Project, python, pandas, Data Visualization, Tensorflow, Deep Learning, keras, Sequential, CNN, convolutional neural network]
 date: 2019-04-17
 excerpt: "American Sign Language (ASL) is the primary language used by many deaf individuals in North America, and it is also used by hard-of-hearing and hearing individuals. The language is as rich as spoken languages and employs signs made with the hand, along with facial gestures and bodily postures.<br/>
-In this project, I trained a convolutional neural network to classify images of ASL letters. "
+In this project, I aim to a convolutional neural network to classify images of ASL letters. "
 comments: True
 project: True
 ---
