@@ -4,7 +4,7 @@ title: About Me
 tags: [about, personal, Kaushik]
 date: 2018-12-26
 comments: False
-feature: https://i.imgur.com/XxlFMYH.png?1
+feature: https://i.imgur.com/3e99Z1r.png?1
 ---
 >“Numbers have an important story to tell. They rely on you to give them a voice.” - Stephen Few
 
