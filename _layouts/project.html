@@ -32,6 +32,12 @@
                         {% if post.project %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
+                          {% if post.badge and post.badge-color == "red" %}
+                          <a class="zoombtn" href="{{ site.url }}{{ post.url }}" style="color:#ffffff;background-color:#FF5733">{{ post.badge }}</a>
+                          {% endif %}
+                          {% if post.badge and post.badge-color == "green" %}
+                          <a class="zoombtn" href="{{ site.url }}{{ post.url }}" style="color:#ffffff;background-color:#27AE60">{{ post.badge }}</a>
+                          {% endif %}
                             <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
                             <p>{{ post.excerpt }}</p>
                             <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
