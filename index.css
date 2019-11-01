@@ -14,8 +14,8 @@ html, body {
   -webkit-transform: translate(-50%, -50%);
 }
 .card {
-  width: 550px;
-  height: 350px;
+  width: 450px;
+  height: 250px;
   background-color: #668DAC;
   background: #668DAC;
   box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
