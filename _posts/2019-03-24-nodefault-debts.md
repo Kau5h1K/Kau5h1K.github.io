@@ -6,6 +6,8 @@ date: 2019-03-24
 excerpt: "Playing bank data scientist and using regression discontinuity to see which debts are worth collecting."
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---

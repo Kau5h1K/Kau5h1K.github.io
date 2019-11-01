@@ -6,6 +6,8 @@ date: 2019-04-15
 excerpt: "Using web scraping and NLP to find the most frequent words in Herman Melville's novel, Moby Dick."
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---

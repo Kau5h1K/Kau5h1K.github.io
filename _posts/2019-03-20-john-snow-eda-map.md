@@ -7,6 +7,8 @@ excerpt: "In 1854, Dr. John Snow (no, not the Game of Thrones's character) used 
 In this project, I line up to recreate John Snow's famous map of the 1854 cholera outbreak in London."
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---

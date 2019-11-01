@@ -6,6 +6,8 @@ date: 2019-10-31
 excerpt: "By calculating similarity for pieces of text, I aim to find duplicate questions from StackOverflow using StarSpace, Gensim and Nltk"
 comments: True
 project: True
+badge: Unavailable
+badge-color: "red"
 ---
 
 ---

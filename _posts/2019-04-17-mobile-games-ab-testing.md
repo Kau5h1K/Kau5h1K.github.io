@@ -7,6 +7,8 @@ excerpt: "Cookie Cats is a hugely popular mobile puzzle game developed by Tactil
 As players progress through the game they will encounter gates that force them to wait some time before they can progress or make an in-app purchase. In this project, I wish to analyze the result of an A/B test where the first gate in Cookie Cats was moved from level 30 to level 40. In particular, I plan to study the impact on player retention."
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---

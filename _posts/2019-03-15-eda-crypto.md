@@ -6,6 +6,8 @@ date: 2019-03-15
 excerpt: "To better understand the growth and impact of Bitcoin and other cryptocurrencies I have, in this project, explored the market capitalization of different cryptocurrencies."
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---

@@ -7,6 +7,8 @@ excerpt: "Neural Information Processing Systems (NIPS) is one of the top machine
 In this Project, I seek to analyze a large collection of NIPS research papers from the past decade to discover the latest trends in machine learning. The techniques I use here to handle large amounts of data can be applied to other text datasets as well."
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---

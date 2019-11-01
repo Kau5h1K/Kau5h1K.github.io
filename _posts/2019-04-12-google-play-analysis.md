@@ -7,6 +7,8 @@ excerpt: "Mobile apps are everywhere. They are easy to create and can be lucrati
 In this Project, I aim to perform a comprehensive analysis of the Android app market by comparing over ten thousand apps in Google Play across different categories. I also plan to look for insights in the data to devise strategies to drive growth and retention."
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---

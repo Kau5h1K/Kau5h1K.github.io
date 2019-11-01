@@ -7,6 +7,8 @@ excerpt: "In 1847 the Hungarian physician Ignaz Semmelweis makes a breakthrough 
 In this python project, I wish to reanalyze the medical data Semmelweis collected."
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---

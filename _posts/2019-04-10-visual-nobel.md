@@ -7,6 +7,8 @@ excerpt: "The Nobel Prize is perhaps the world's most well known scientific awar
 In this project, I explore patterns and trends in over 100 years worth of Nobel Prize winners. What characteristics do the prize winners have? Which country gets it most often? And has anybody gotten it twice?"
 comments: True
 project: True
+badge: Available
+badge-color: "green"
 ---
 
 ---
