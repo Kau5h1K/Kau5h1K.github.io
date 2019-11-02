@@ -9,9 +9,14 @@ feature: https://i.imgur.com/3e99Z1r.png?1
 >“Numbers have an important story to tell. They rely on you to give them a voice.” - Stephen Few
 
 ---
+The human mind is a powerful place, and in the grand scheme of things that revolve around Data science, there are few simple things that fascinate me the most:
+- The ingenuity of problem statement.
+- The flexibility to hunt for answers.
+- The revelation of insight and logic buried deep inside the data.
+- The logic, oh, the absolute logic, so much more rational, genuine and complex than I ever thought of.
+- and finally the renewal of thought that promotes inductive chain learning, which exposes me to new concepts that help in solving previously inaccessible problems.
 
-Hi peeps!
-This is **Kaushik** and well, to put it short I'd like to call myself a math geek. But when you get right down to it, I'm much more:
+My name is **Kaushik Nishtala** and well, to put it short I'd like to call myself a math geek. But when you get right down to it, I'm much more:
 - an avid reader
 - **love** to travel
 - enjoy a fair amount of music, art and wildlife photography
