@@ -33,5 +33,5 @@ Although I'm one of those laconic types, I intend to keep everything I want to s
 
 ---
 
-In a nutshell, my *passion* for content is coupled with a love for big picture planning, daily data trends and analysis along with a hint of contributing to productive research in the desired fields. I'm not the one who just wants to work. I'm the one who actually wants to **work**-and **plan**, **ideate**, and **lead**. This is what I drive my passion towards and strive to do best and love most.
+In a nutshell, my *passion* for the subject is coupled with a love for big picture planning, daily data trends and analysis along with a hint of contributing to productive research in the desired fields. I'm not the one who just wants to work. I'm the one who actually wants to **work**-and **develop**, **ideate**, and **optimize**. This is what I drive my passion towards and strive to do best and love most.
 {: .notice}
