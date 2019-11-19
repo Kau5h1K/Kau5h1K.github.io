@@ -9,14 +9,8 @@ feature: https://i.imgur.com/3e99Z1r.png?1
 >“Numbers have an important story to tell. They rely on you to give them a voice.” - Stephen Few
 
 ---
-The human mind is a powerful place, and in the grand scheme of things that revolve around Data science, there are few simple things that fascinate me the most:
-- The ingenuity of problem statement.
-- The flexibility to hunt for answers.
-- The revelation of insight and logic buried deep inside the data.
-- The logic, oh, the absolute logic, so much more rational, genuine and complex than I ever thought of.
-- and finally the renewal of thought that promotes inductive chain learning, which exposes me to new concepts that help in solving previously inaccessible problems.
 
-My name is **Kaushik Nishtala** and well, to put it short I'd like to call myself a math geek. But when you get right down to it, I'm much more:
+Hi peeps, my name is **Kaushik Nishtala** and well, to put it short I'd like to call myself a math geek. But when you get right down to it, I'm much more:
 - an avid reader
 - **love** to travel
 - enjoy a fair amount of music, art and wildlife photography
@@ -29,7 +23,7 @@ Assuming this should suffice to cover up my personal interests, professionally I
 I am intrigued by the changing economic landscape and sheer amount of data that's been growing at an exorbitant pace over the years and those to follow.
 I basically channel my interests and vision down into crunching numbers, stats and visualizing data, so anything that deals with math and data with an appreciable flavor of logic and reason will hook me up on it right away. *I'm fascinated by the idea of capturing and transforming conspicuous and meaningful data into numbers, numbers into words, words into stories and stories into action to make this a reality for everyone.*
 
-Participation in affiliate marketing of products from Amazon under an influencer program led to my foray into Data science. The lackluster marketing of products for months on end enfeebled my enthusiasm into realms of monotony. Thanks to my curiosity, I rifled through many Data Science articles on *medium.com* that changed my perspective on viewing and confronting the data around us. And as is the case with self-fulfilling prophecies, having to deal with rigours of venturing into data science proved challenging, one rife with lots of learning in the form of *MOOCs*, *hackathons* and *workshops* yet at the same time whetted my curiosity and carved a path to solving more complex problems and paved way to glean corporate exposure.
+Participation in affiliate marketing of products from Amazon under an influencer program led to my foray into Data science. The lackluster marketing of products for months on end enfeebled my enthusiasm into realms of monotony. Thanks to my curiosity, I rifled through many Data Science articles online that changed my perspective on viewing and confronting the data around us. And as is the case with self-fulfilling prophecies, having to deal with rigours of venturing into data science proved challenging, one rife with lots of learning in the form of *MOOCs*, *hackathons* and *workshops* yet at the same time whetted my curiosity and carved a path to solving more complex problems and paved way to glean corporate exposure.
 
 My ultimate intent of pursuit in **research** is to build useful systems and algorithms that derive meaning, learn patterns, produce insights and predictions from diverse data for various applications. I believe it to be one of the fastest ways to make the world advance. The experience gained thus far helped me identify the need for advancements of real time business intelligence and decision making in supply chain analytics, healthcare & BFSI, etc. In order to seamlessly integrate these areas, a new architecture needs to be developed which calls for comprehensive research in this regard.
 
