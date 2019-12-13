@@ -14,10 +14,10 @@ Hi peeps, my name is **Kaushik Nishtala** and well, to put it short I'd like to 
 - an avid reader
 - **love** to travel
 - enjoy a fair amount of music, art and wildlife photography
-- love playing games
+- **love** playing games
 - geek out over technological trends and gadgets
 - tend to keep up with Tennis, cricket and Basketball
-- also play piano in my highs and lows.
+- play piano in my highs and lows.
 
 Assuming this should suffice to cover up my personal interests, professionally I'm into deep work, connecting with people, and constantly learning something new everyday.
 I am intrigued by the changing economic landscape and sheer amount of data that's been growing at an exorbitant pace over the years and those to follow.
@@ -30,5 +30,5 @@ Although I'm one of those laconic types, I intend to keep everything I want to s
 
 ---
 
-In a nutshell, my *passion* for the subject is coupled with a love for big picture planning, daily data trends and analysis along with a hint of contributing to productive research in the desired fields. I'm not the one who just wants to work. I'm the one who actually wants to **work**-and **develop**, **ideate**, and **optimize**. This is what I drive my passion towards and strive to do best and love most.
+In a nutshell, my *passion* for the subject is coupled with a love for big picture planning, daily data trends and analysis along with a hint of contributing to productive research in the desired fields. I'm not the one who just wants to work. I'm the one who actually wants to **work**-and **develop**, **ideate**, and **lead**. This is what I drive my passion towards and strive to do best and love most.
 {: .notice}
