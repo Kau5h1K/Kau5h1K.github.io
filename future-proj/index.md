@@ -1,6 +1,6 @@
 ---
 layout: future-proj
-title: All Projects
+title: Future Projects
 excerpt: "A List of Future Projects"
 comments: false
 ---
