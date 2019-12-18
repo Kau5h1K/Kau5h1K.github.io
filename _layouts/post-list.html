@@ -34,7 +34,7 @@
                 </div>
                 <div class="post-list">
                     {% for post in site.posts %}
-                        {% if post.project == null %}
+                        {% if post.project == null and post.type == null %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                           {% if post.badge and post.badge-color == "red" %}
@@ -42,6 +42,21 @@
                           {% endif %}
                           {% if post.badge and post.badge-color == "green" %}
                           <a class="zoombtn" href="{{ site.url }}{{ post.url }}" style="color:#ffffff;background-color:#27AE60">{{ post.badge }}</a>
+                          {% endif %}
+                          {% if post.badge and post.badge-color == "blue" %}
+                          <a class="zoombtn" href="{{ site.url }}{{ post.url }}" style="color:#ffffff;background-color:#42A6EB">{{ post.badge }}</a>
+                          {% endif %}
+                          {% if post.badge and post.badge-color == "yellow" %}
+                          <a class="zoombtn" href="{{ site.url }}{{ post.url }}" style="color:#ffffff;background-color:#F8C471">{{ post.badge }}</a>
+                          {% endif %}
+                          {% if post.badge and post.badge-color == "purple" %}
+                          <a class="zoombtn" href="{{ site.url }}{{ post.url }}" style="color:#ffffff;background-color:#AD58DE">{{ post.badge }}</a>
+                          {% endif %}
+                          {% if post.badge and post.badge-color == "pink" %}
+                          <a class="zoombtn" href="{{ site.url }}{{ post.url }}" style="color:#ffffff;background-color:#DE58BC">{{ post.badge }}</a>
+                          {% endif %}
+                          {% if post.badge and post.badge-color == "cyan" %}
+                          <a class="zoombtn" href="{{ site.url }}{{ post.url }}" style="color:#ffffff;background-color:#58C4DE">{{ post.badge }}</a>
                           {% endif %}
                             <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
                             <p>{{ post.excerpt }}</p>
