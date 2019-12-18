@@ -25,14 +25,11 @@
                     <a class="btn zoombtn" href="{{site.url}}/home">
                         <i class="fa fa-home"></i>
                     </a>
-                    <a class="btn zoombtn" href="{{site.url}}/future-proj">
-                        <i>Future Projects</i>
-                    </a>
                 </div>
 
                 <div class="post-list">
                     {% for post in site.posts %}
-                        {% if post.project %}
+                        {% if post.project == "future" %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                           {% if post.badge and post.badge-color == "red" %}
