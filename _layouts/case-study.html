@@ -25,16 +25,13 @@
                     <a class="btn zoombtn" href="{{ site.url }}/home">
                         <i class="fa fa-home"></i>
                     </a>
-                    <a class="btn zoombtn" href="{{ site.url }}/case-study">
-                        <i>Case Studies</i>
-                    </a>
-                    <a class="btn zoombtn" href="{{ site.url }}/comp-prog">
-                        <i>Competitive Programming</i>
+                    <a class="btn zoombtn" href="{{ site.url }}/posts">
+                        <i class="fa fa-chevron-left"></i>
                     </a>
                 </div>
                 <div class="post-list">
                     {% for post in site.posts %}
-                        {% if post.project == null %}
+                        {% if post.project == null and post.type == "case-study" %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                           {% if post.badge and post.badge-color == "red" %}

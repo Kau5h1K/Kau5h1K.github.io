@@ -7,6 +7,7 @@ excerpt: "Data science isn't just for predicting ad-clicks-it's also useful for 
 comments: True
 badge: Coming Soon
 badge-color: "red"
+type: "case-study"
 ---
 
 ---
