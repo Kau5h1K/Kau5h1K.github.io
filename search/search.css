@@ -11,8 +11,6 @@
   outline: none;
   color: #658CAB;
   background-color: #283643;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
 }
 
 .search-input:focus {
