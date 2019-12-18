@@ -5,8 +5,8 @@ date: 2019-01-12
 tags: [Topcoder, real-time, python, stream, Twitter, API, web-scraping, parse, Auth, Text Analysis, Tweepy]
 excerpt: "Interact with APIs in a deep dive into the Twitter streaming API. We look into streaming real-time Twitter data and to analyze and visualize it!"
 comments: true
-badge: Topcoder
-badge-color: "blue"
+badge: Generic
+badge-color: "cyan"
 ---
 Herein, we're going to look at:
 * How to stream data from **Twitter API**

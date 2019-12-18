@@ -6,7 +6,7 @@ tags: [HackerRank, probability, python, random numbers, hackers statistics]
 excerpt: "With hacker statistics, calculate your chances of winning a bet using random number generators, loops and matplotlib."
 comments: true
 badge: HackerRank
-badge-color: "cyan"
+badge-color: "green"
 type: "comp-prog"
 ---
 A while back, I have come across a coding challenge prompting to make a guess in terms of probability of a peculiar problem that caught my interest. *Imagine you're walking up a random sky scraper along with your friends and paused to play a game of dice to kill some time.*
