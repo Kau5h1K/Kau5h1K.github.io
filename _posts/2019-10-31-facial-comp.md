@@ -8,7 +8,7 @@ excerpt: "Facial composites are widely used in forensics to generate images of s
 In this project I wish to try to implement an app for creating facial composite that will be able to construct desired faces without explicitly providing databases of templates. I aim to apply Variational Autoencoders and Gaussian processes for this task."
 comments: True
 project: future
-badge: Unavailable
+badge: Coming Soon
 badge-color: "red"
 ---
 

@@ -6,7 +6,7 @@ date: 2019-10-31
 excerpt: "I wish to use a recurrent neural network to solve Named Entity Recognition (NER) problem by recognizing named entities from Twitter."
 comments: True
 project: future
-badge: Unavailable
+badge: Coming Soon
 badge-color: "red"
 ---
 
