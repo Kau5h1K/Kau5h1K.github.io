@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "The Filmmaker's Guide"
-tags: [ Academic, Project ]
+tags: [ Academic Project, Project ]
 date: 2019-10-31
-excerpt: "Analysis of trends in film and television industries worldwide"
+excerpt: "Analysis of trends in film and television industries worldwide using R."
 comments: True
-project: future
-badge: Coming Soon
-badge-color: "red"
+project: True
+badge: Academic Project
+badge-color: "yellow"
 ---
 
 ---
