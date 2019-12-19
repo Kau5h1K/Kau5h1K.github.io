@@ -7,8 +7,8 @@ excerpt: "Natural Language Processing (NLP) is an exciting field of study for da
 In this Project, I aim to use NLP to find the degree of similarity between movies based on their plots available on IMDb and Wikipedia."
 comments: True
 project: True
-badge: Available
-badge-color: "green"
+badge: Passion
+badge-color: "purple"
 ---
 
 ---

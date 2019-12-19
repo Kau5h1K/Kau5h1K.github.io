@@ -7,8 +7,8 @@ excerpt: "While I'm not a fan nor a hater of the Kardashians and Jenners, the po
 In this Project, I wish to explore the data underneath the hype in the form of search interest data from Google Trends. I also intend to recreate the Google Trends plot to visualize their ups and downs over time, then make a few custom plots of my own. And finally answer the big question: is Kim even the most famous sister anymore?"
 comments: True
 project: True
-badge: Available
-badge-color: "green"
+badge: Passion
+badge-color: "purple"
 ---
 
 ---

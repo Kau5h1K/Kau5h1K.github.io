@@ -7,8 +7,8 @@ excerpt: "American Sign Language (ASL) is the primary language used by many deaf
 In this project, I aim to a convolutional neural network to classify images of ASL letters. "
 comments: True
 project: True
-badge: Available
-badge-color: "green"
+badge: Passion
+badge-color: "purple"
 ---
 
 ---

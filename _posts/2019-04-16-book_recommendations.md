@@ -7,8 +7,8 @@ excerpt: "Recommendation systems are at the heart of many products such as Netfl
 In this Project, I propose to build the basic book recommendation system based on their content. I plan to use Charles Darwin's bibliography to find out which books might interest you!"
 comments: True
 project: True
-badge: Available
-badge-color: "green"
+badge: Passion
+badge-color: "purple"
 ---
 
 ---

@@ -8,8 +8,8 @@ In this project, I plan to use the Python package Fuzzy to find out the genders 
 First, using fuzzy (sound) name matching, I seek to search for author names in a dataset provided by the US Social Security Administration that contains names and genders of all individuals who have applied for Social Security Cards. Next, I aggregate the author dataset by including gender. Finally, I aim to use the new dataset to plot the gender distribution of children's picture books authors over time."
 comments: True
 project: True
-badge: Available
-badge-color: "green"
+badge: Passion
+badge-color: "purple"
 ---
 
 ---

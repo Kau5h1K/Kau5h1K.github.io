@@ -7,8 +7,8 @@ excerpt: "Almost every web service you join will require you to come up with a p
 In this project, I have taken a list of user passwords and, using publication 800-63B, I wish to write code that automatically detects and flags the bad passwords."
 comments: True
 project: True
-badge: Available
-badge-color: "green"
+badge: Passion
+badge-color: "purple"
 ---
 
 ---
