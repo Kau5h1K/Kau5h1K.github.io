@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Keyword Generation for Google Ads"
-tags: [ Project, python, pandas, DataFrame]
+tags: [ Passion, Project, python, pandas, DataFrame]
 date: 2019-03-18
 excerpt: "You work for a digital marketing agency, which is approached by a massive online retailer of furniture. You are tasked with creating a prototype set of keywords for search campaigns for their sofas section.
 <br/>

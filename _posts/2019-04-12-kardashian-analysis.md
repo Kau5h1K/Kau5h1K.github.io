@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kardashians Vs Jenners Analysis"
-tags: [ Project, python, pandas, Cleaning Data, Google Trends, Timeseries, Data visualization]
+tags: [ Passion, Project, python, pandas, Cleaning Data, Google Trends, Timeseries, Data visualization]
 date: 2019-04-12
 excerpt: "While I'm not a fan nor a hater of the Kardashians and Jenners, the polarizing family intrigues me. Why? Their marketing prowess. Say what you will about them and what they stand for, they are great at the hype game. Everything they touch turns to content.<br/>
 In this Project, I wish to explore the data underneath the hype in the form of search interest data from Google Trends. I also intend to recreate the Google Trends plot to visualize their ups and downs over time, then make a few custom plots of my own. And finally answer the big question: is Kim even the most famous sister anymore?"

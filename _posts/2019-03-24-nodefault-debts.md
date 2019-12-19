@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Regression Discontinuity to see which debts are worth collecting"
-tags: [ Project, python, pandas, Cleaning Data, Statistical learning, Regression Discontinuity, hypothesis, null hypothesis, pvalue, Statistical test, regression modeling, Graphical exploratory data analysis, R-squared, OLS, chi-square test, significance test]
+tags: [ Passion, Project, python, pandas, Cleaning Data, Statistical learning, Regression Discontinuity, hypothesis, null hypothesis, pvalue, Statistical test, regression modeling, Graphical exploratory data analysis, R-squared, OLS, chi-square test, significance test]
 date: 2019-03-24
 excerpt: "Playing bank data scientist and using regression discontinuity to see which debts are worth collecting."
 comments: True

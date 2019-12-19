@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Predicting gender using Sound data"
-tags: [ Project, python, pandas, fuzzy, Data Visualization, NYSIIS ]
+tags: [ Passion, Project, python, pandas, fuzzy, Data Visualization, NYSIIS ]
 date: 2019-03-18
 excerpt: "The same name can be spelled out in a many ways (for example, Marc and Mark, or Elizabeth and Elisabeth). Sound can, therefore, be a better way to match names than spelling. <br/>
 In this project, I plan to use the Python package Fuzzy to find out the genders of authors that have appeared in the New York Times Best Seller list for Children's Picture books.<br/>
