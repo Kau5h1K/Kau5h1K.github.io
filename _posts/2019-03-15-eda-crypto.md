@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Exploring the Bitcoin Cryptocurrency Market"
-tags: [ Passion, Project, python, pandas, Cleaning Data]
+tags: [ Passion Project, Project, python, pandas, Cleaning Data]
 date: 2019-03-15
 excerpt: "To better understand the growth and impact of Bitcoin and other cryptocurrencies I have, in this project, explored the market capitalization of different cryptocurrencies."
 comments: True
 project: True
-badge: Passion
+badge: Passion Project
 badge-color: "purple"
 ---
 

@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Finding Movie Similarity from Plot Summaries"
-tags: [ Passion, Project, python, pandas, Cleaning Data, hierarchy, clustering, dendrogram, cosine-similarity, Natural Language Processing, NLP, Tokenize, Stem, SnowballStemmer, KMeans, TfidfVectorizer, regex, topical similarity]
+tags: [ Passion Project, Project, python, pandas, Cleaning Data, hierarchy, clustering, dendrogram, cosine-similarity, Natural Language Processing, NLP, Tokenize, Stem, SnowballStemmer, KMeans, TfidfVectorizer, regex, topical similarity]
 date: 2019-04-15
 excerpt: "Natural Language Processing (NLP) is an exciting field of study for data scientists where they develop algorithms that can make sense out of conversational language used by humans. <br/>
 In this Project, I aim to use NLP to find the degree of similarity between movies based on their plots available on IMDb and Wikipedia."
 comments: True
 project: True
-badge: Passion
+badge: Passion Project
 badge-color: "purple"
 ---
 

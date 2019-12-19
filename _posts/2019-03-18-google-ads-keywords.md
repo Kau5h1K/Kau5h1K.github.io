@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Keyword Generation for Google Ads"
-tags: [ Passion, Project, python, pandas, DataFrame]
+tags: [ Passion Project, Project, python, pandas, DataFrame]
 date: 2019-03-18
 excerpt: "You work for a digital marketing agency, which is approached by a massive online retailer of furniture. You are tasked with creating a prototype set of keywords for search campaigns for their sofas section.
 <br/>
 The most important task in structuring a search engine marketing account is mapping the right keywords to the right ads and making sure they send users to the right landing pages. Having figured that out is a big part of the account setup and makes the life of the account manager much easier."
 comments: True
 project: True
-badge: Passion
+badge: Passion Project
 badge-color: "purple"
 ---
 

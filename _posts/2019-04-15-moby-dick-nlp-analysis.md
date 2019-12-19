@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Moby Dick Word Frequency"
-tags: [ Passion, Project, python, pandas, Cleaning Data, BeautifulSoup, Natural Language Processing, NLP, requests, nltk, regex, HTML]
+tags: [ Passion Project, Project, python, pandas, Cleaning Data, BeautifulSoup, Natural Language Processing, NLP, requests, nltk, regex, HTML]
 date: 2019-04-15
 excerpt: "Using web scraping and NLP to find the most frequent words in Herman Melville's novel, Moby Dick."
 comments: True
 project: True
-badge: Passion
+badge: Passion Project
 badge-color: "purple"
 ---
 

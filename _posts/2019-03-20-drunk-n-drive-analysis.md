@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Drunk Analysis"
-tags: [ Passion, Project, python, pandas, Cleaning Data, Manipulating DataFrames]
+tags: [ Passion Project, Project, python, pandas, Cleaning Data, Manipulating DataFrames]
 date: 2019-03-20
 excerpt: "Flexing my pandas muscles on breath alcohol test data from Ames, Iowa, USA. I aim to group, summarize, and visualize data on breath alcohol tests in Ames, Iowa, (home of Iowa State University) from 2013-2017. Some questions that could be answered include, \"What is the highest recorded value?\" and \"When do breath alcohol tests occur most?\""
 comments: True
 project: True
-badge: Passion
+badge: Passion Project
 badge-color: "purple"
 ---
 
