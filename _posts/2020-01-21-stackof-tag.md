@@ -6,7 +6,7 @@ date: 2020-01-21
 excerpt: "In this project, I seek to develop a machine learning model that automatically infers and tags the topic of a question on StackOverflow."
 comments: True
 project: True
-badge: Facebook Challenge
+badge: Competition
 badge-color: "purple"
 ---
 
