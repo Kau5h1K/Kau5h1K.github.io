@@ -10,25 +10,21 @@ feature: https://i.imgur.com/3e99Z1r.png?1
 
 ---
 
-Hi peeps, my name is **Kaushik Nishtala** and well, to put it short I'd like to call myself a math geek. But when you get right down to it, I'm much more:
-- an avid reader
-- **love** to travel
-- enjoy a fair amount of music, art and wildlife photography
-- **love** playing games
-- geek out over technological trends and gadgets
-- tend to keep up with Tennis, cricket and Basketball
-- play piano in my highs and lows.
+Hi, I'm **Kaushik Nishtala**, a data scientist with a diverse range of interests:
 
-Assuming this should suffice to cover up my personal interests, professionally I'm into deep work, connecting with people, and constantly learning something new everyday.
-I am intrigued by the changing economic landscape and sheer amount of data that's been growing at an exorbitant pace over the years and those to follow.
-I basically channel my interests and vision down into crunching numbers, stats and visualizing data, so anything that deals with math and data with an appreciable flavor of logic and reason will hook me up on it right away. *I'm fascinated by the idea of capturing and transforming conspicuous and meaningful data into numbers, numbers into words, words into stories and stories into action to make this a reality for everyone.*
+- Avid reader
+- Love to travel
+- Enjoy music, art, and wildlife photography
+- Passionate about playing games
+- Enthusiastic about AI Research, technological trends and gadgets
+- Follow Tennis, cricket, and basketball closely
+- Play the piano during both my highs and lows
 
-My ultimate intent of pursuit in **research** is to build useful systems and algorithms that derive meaning, learn patterns, produce insights and predictions from diverse data for various applications. I believe it to be one of the fastest ways to make the world advance. The experience gained thus far helped me identify the need for advancements of real time business intelligence and decision making in supply chain analytics, healthcare & BFSI, etc. In order to seamlessly integrate these areas, a new architecture needs to be developed which calls for comprehensive research in this regard.
+While these personal interests give a glimpse into who I am, professionally, I am driven by deep work, connecting with others, and learning something new every day. I'm fascinated by the evolving economic landscape and the massive amount of data that continues to grow at an extraordinary rate. I channel my passion into analyzing numbers, statistics, and visualizing data. Anything that involves math, data, logic, and reason captures my interest immediately. *I am captivated by the process of transforming meaningful data into numbers, numbers into words, words into stories, and stories into actions to make a difference.*
 
-This is my first professional blog. I want to utilize this space to write about my work, about machine learning, algorithms, statistics,  mathematical modeling, emerging topics in data science and its applications hoping it would become an outlet for technical, intuitive and programming-related posts. It's my way to document things I find interesting for my future self.
-Although I'm one of those laconic types, I intend to keep everything I want to share regarding my professional landscape and interests crisp and precise, elaborating on the pointers that require more emphasis while trying my best to proofread my own posts.
+This is my first professional blog, where I aim to share interesting insights about my work in AI - machine learning, algorithms, statistics, mathematical modeling, and emerging topics in AI and its applications. It's a way to document things I find interesting for my future self. While I tend to be concise, I aim to keep my posts focused and precise, elaborating on the points that require emphasis and always striving to proofread carefully.
 
 ---
 
-In a nutshell, my *passion* for the subject is coupled with a love for big picture planning, daily data trends and analysis along with a hint of contributing to productive research in the desired fields. I'm not the one who just wants to work. I'm the one who actually wants to **work**-and **develop**, **ideate**, and **lead**. This is what I drive my passion towards and strive to do best and love most.
+I’m best reached via email and linkedin. I’m always open to interesting conversations and collaboration.
 {: .notice}
